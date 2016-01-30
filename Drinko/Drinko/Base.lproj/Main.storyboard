@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MKl-Pt-tcY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Page View Controller-->
+        <scene sceneID="w50-5C-vKI">
+            <objects>
+                <viewController id="o8H-Vf-AHb" customClass="MainPageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cHK-hW-Ieh"/>
+                        <viewControllerLayoutGuide type="bottom" id="3de-N0-p7A"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hwc-qI-jph">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx1-gy-gNl">
+                                <rect key="frame" x="20" y="395" width="560" height="80"/>
+                                <color key="backgroundColor" red="0.11409260092188184" green="0.52411240183246077" blue="0.23533429934730385" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="qYu-uk-yfZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="LATEST GAMES">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bhs-dr-Hr8" kind="show" id="1wa-Fa-IXU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-yK-oIQ">
+                                <rect key="frame" x="20" y="290" width="560" height="80"/>
+                                <color key="backgroundColor" red="0.25974504925772535" green="0.29062770037667823" blue="0.76189278885638023" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="IwC-bE-Ahf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oFV-Ky-IpB" kind="show" id="2wA-qz-7dv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kx1-gy-gNl" firstAttribute="trailing" secondItem="hwc-qI-jph" secondAttribute="trailingMargin" id="1y3-up-PzB"/>
+                            <constraint firstItem="Kx1-gy-gNl" firstAttribute="leading" secondItem="hwc-qI-jph" secondAttribute="leadingMargin" id="3kS-gJ-NHs"/>
+                            <constraint firstItem="kqW-yK-oIQ" firstAttribute="leading" secondItem="hwc-qI-jph" secondAttribute="leadingMargin" id="IcQ-dq-JGA"/>
+                            <constraint firstItem="kqW-yK-oIQ" firstAttribute="top" secondItem="cHK-hW-Ieh" secondAttribute="bottom" constant="226" id="Lun-h6-yUd"/>
+                            <constraint firstItem="Kx1-gy-gNl" firstAttribute="top" secondItem="kqW-yK-oIQ" secondAttribute="bottom" constant="25" id="ZMu-Rp-MyP"/>
+                            <constraint firstItem="kqW-yK-oIQ" firstAttribute="trailing" secondItem="hwc-qI-jph" secondAttribute="trailingMargin" id="kNt-2b-mSb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="jyh-lA-Ti5"/>
+                    <connections>
+                        <outlet property="btnLatest" destination="Kx1-gy-gNl" id="VJD-fO-8R2"/>
+                        <outlet property="btnPlay" destination="kqW-yK-oIQ" id="Oc6-Dk-fCO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KUe-0p-bnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="224"/>
+        </scene>
+        <!--Start Game View Controller-->
+        <scene sceneID="V1d-Tx-qbl">
+            <objects>
+                <viewController id="oFV-Ky-IpB" customClass="StartGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="98T-i5-Poq"/>
+                        <viewControllerLayoutGuide type="bottom" id="n6n-Q3-Kkk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cLD-OS-uTW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n13-7Z-sHl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1663" y="224"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RGX-d4-Y4M">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MKl-Pt-tcY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IzJ-0t-cwk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="o8H-Vf-AHb" kind="relationship" relationship="rootViewController" id="m2n-qM-cfE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fli-Sh-Z0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="162" y="224"/>
+        </scene>
+        <!--Latest Games View Controller-->
+        <scene sceneID="Adp-na-Aq6">
+            <objects>
+                <viewController id="bhs-dr-Hr8" customClass="LatestGamesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LmW-zd-mjr"/>
+                        <viewControllerLayoutGuide type="bottom" id="M9S-TT-Qhj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aJ7-8B-JlU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-R6-uaC">
+                                <rect key="frame" x="30" y="152" width="540" height="287"/>
+                                <color key="backgroundColor" red="1" green="0.95028507966181885" blue="0.99319588070476961" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="yellowCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="yellowCell" id="aYq-L0-3vi">
+                                        <rect key="frame" x="0.0" y="92" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aYq-L0-3vi" id="cH0-c0-MnZ">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431372549022" green="0.89803921568627454" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="blueCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="blueCell" id="6tr-4K-QPp">
+                                        <rect key="frame" x="0.0" y="164" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6tr-4K-QPp" id="UlO-9f-VIw">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.36862745098039218" green="0.35686274509803922" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="redCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="redCell" id="RC7-46-1px">
+                                        <rect key="frame" x="0.0" y="236" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RC7-46-1px" id="8m9-Rp-hrk">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="blackCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="blackCell" id="N3D-Kc-coY">
+                                        <rect key="frame" x="0.0" y="308" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N3D-Kc-coY" id="h0b-ML-5TG">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="greenCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="greenCell" id="AT5-5C-Ash">
+                                        <rect key="frame" x="0.0" y="380" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AT5-5C-Ash" id="mTy-3I-tKg">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.082352941176470587" green="0.47450980392156861" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="whiteCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="whiteCell" id="EdE-gM-wxA">
+                                        <rect key="frame" x="0.0" y="452" width="540" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EdE-gM-wxA" id="MAV-T4-SDX">
+                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cwN-R6-uaC" firstAttribute="trailing" secondItem="aJ7-8B-JlU" secondAttribute="trailingMargin" constant="-10" id="ZHs-C8-AZP"/>
+                            <constraint firstItem="cwN-R6-uaC" firstAttribute="leading" secondItem="aJ7-8B-JlU" secondAttribute="leadingMargin" constant="10" id="cl2-VR-j1p"/>
+                            <constraint firstItem="M9S-TT-Qhj" firstAttribute="top" secondItem="cwN-R6-uaC" secondAttribute="bottom" constant="161" id="m7c-GO-fbd"/>
+                            <constraint firstItem="cwN-R6-uaC" firstAttribute="top" secondItem="LmW-zd-mjr" secondAttribute="bottom" constant="88" id="zhe-jp-FD4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="latestGamesTableView" destination="cwN-R6-uaC" id="Qrb-4v-Kyn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C94-ZF-aff" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1013"/>
+        </scene>
+    </scenes>
+</document>

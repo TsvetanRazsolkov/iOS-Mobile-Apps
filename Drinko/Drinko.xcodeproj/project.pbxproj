@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1EA753E31C5D30BF004F0022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E21C5D30BF004F0022 /* main.m */; };
+		1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E51C5D30BF004F0022 /* AppDelegate.m */; };
+		1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753EA1C5D30BF004F0022 /* Main.storyboard */; };
+		1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */; };
+		1EA753F11C5D30BF004F0022 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753F01C5D30BF004F0022 /* Assets.xcassets */; };
+		1EA753F41C5D30BF004F0022 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753F21C5D30BF004F0022 /* LaunchScreen.storyboard */; };
+		1EA753FF1C5D30BF004F0022 /* DrinkoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753FE1C5D30BF004F0022 /* DrinkoTests.m */; };
+		1EA7540A1C5D30BF004F0022 /* DrinkoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754091C5D30BF004F0022 /* DrinkoUITests.m */; };
+		1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754191C5D314F004F0022 /* MainPageViewController.m */; };
+		1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754201C5D40BA004F0022 /* StartGameViewController.m */; };
+		1EA754231C5D40BA004F0022 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA754211C5D40BA004F0022 /* StartGameViewController.xib */; };
+		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
+		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
+		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
+		1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1EA753FB1C5D30BF004F0022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EA753D61C5D30BF004F0022 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EA753DD1C5D30BF004F0022;
+			remoteInfo = Drinko;
+		};
+		1EA754061C5D30BF004F0022 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EA753D61C5D30BF004F0022 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1EA753DD1C5D30BF004F0022;
+			remoteInfo = Drinko;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1EA753DE1C5D30BF004F0022 /* Drinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA753E21C5D30BF004F0022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1EA753E41C5D30BF004F0022 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1EA753E51C5D30BF004F0022 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1EA753EB1C5D30BF004F0022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1EA753EE1C5D30BF004F0022 /* Drinko.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Drinko.xcdatamodel; sourceTree = "<group>"; };
+		1EA753F01C5D30BF004F0022 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1EA753F31C5D30BF004F0022 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1EA753F51C5D30BF004F0022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EA753FA1C5D30BF004F0022 /* DrinkoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA753FE1C5D30BF004F0022 /* DrinkoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkoTests.m; sourceTree = "<group>"; };
+		1EA754001C5D30BF004F0022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EA754051C5D30BF004F0022 /* DrinkoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrinkoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1EA754091C5D30BF004F0022 /* DrinkoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrinkoUITests.m; sourceTree = "<group>"; };
+		1EA7540B1C5D30BF004F0022 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1EA754181C5D314F004F0022 /* MainPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPageViewController.h; sourceTree = "<group>"; };
+		1EA754191C5D314F004F0022 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
+		1EA7541F1C5D40BA004F0022 /* StartGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameViewController.h; sourceTree = "<group>"; };
+		1EA754201C5D40BA004F0022 /* StartGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameViewController.m; sourceTree = "<group>"; };
+		1EA754211C5D40BA004F0022 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartGameViewController.xib; sourceTree = "<group>"; };
+		1EA7542B1C5D6247004F0022 /* commonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commonBackground.png; sourceTree = "<group>"; };
+		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
+		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
+		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
+		1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestGamesViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1EA753DB1C5D30BF004F0022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA753F71C5D30BF004F0022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA754021C5D30BF004F0022 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EA753D51C5D30BF004F0022 = {
+			isa = PBXGroup;
+			children = (
+				1EA753E01C5D30BF004F0022 /* Drinko */,
+				1EA753FD1C5D30BF004F0022 /* DrinkoTests */,
+				1EA754081C5D30BF004F0022 /* DrinkoUITests */,
+				1EA753DF1C5D30BF004F0022 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1EA753DF1C5D30BF004F0022 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1EA753DE1C5D30BF004F0022 /* Drinko.app */,
+				1EA753FA1C5D30BF004F0022 /* DrinkoTests.xctest */,
+				1EA754051C5D30BF004F0022 /* DrinkoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1EA753E01C5D30BF004F0022 /* Drinko */ = {
+			isa = PBXGroup;
+			children = (
+				1EA7541B1C5D32D0004F0022 /* Resources */,
+				1EA754171C5D30F9004F0022 /* ViewControllers */,
+				1EA753E41C5D30BF004F0022 /* AppDelegate.h */,
+				1EA753E51C5D30BF004F0022 /* AppDelegate.m */,
+				1EA753EA1C5D30BF004F0022 /* Main.storyboard */,
+				1EA753F01C5D30BF004F0022 /* Assets.xcassets */,
+				1EA753F21C5D30BF004F0022 /* LaunchScreen.storyboard */,
+				1EA753F51C5D30BF004F0022 /* Info.plist */,
+				1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */,
+				1EA753E11C5D30BF004F0022 /* Supporting Files */,
+			);
+			path = Drinko;
+			sourceTree = "<group>";
+		};
+		1EA753E11C5D30BF004F0022 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1EA753E21C5D30BF004F0022 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1EA753FD1C5D30BF004F0022 /* DrinkoTests */ = {
+			isa = PBXGroup;
+			children = (
+				1EA753FE1C5D30BF004F0022 /* DrinkoTests.m */,
+				1EA754001C5D30BF004F0022 /* Info.plist */,
+			);
+			path = DrinkoTests;
+			sourceTree = "<group>";
+		};
+		1EA754081C5D30BF004F0022 /* DrinkoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1EA754091C5D30BF004F0022 /* DrinkoUITests.m */,
+				1EA7540B1C5D30BF004F0022 /* Info.plist */,
+			);
+			path = DrinkoUITests;
+			sourceTree = "<group>";
+		};
+		1EA754171C5D30F9004F0022 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1EA754181C5D314F004F0022 /* MainPageViewController.h */,
+				1EA754191C5D314F004F0022 /* MainPageViewController.m */,
+				1EA7541F1C5D40BA004F0022 /* StartGameViewController.h */,
+				1EA754201C5D40BA004F0022 /* StartGameViewController.m */,
+				1EA754211C5D40BA004F0022 /* StartGameViewController.xib */,
+				1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */,
+				1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */,
+				1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1EA7541B1C5D32D0004F0022 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EA7541C1C5D32D8004F0022 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1EA7541C1C5D32D8004F0022 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1EA7542D1C5D625B004F0022 /* mainPageBackground.png */,
+				1EA7542B1C5D6247004F0022 /* commonBackground.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1EA753DD1C5D30BF004F0022 /* Drinko */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EA7540E1C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "Drinko" */;
+			buildPhases = (
+				1EA753DA1C5D30BF004F0022 /* Sources */,
+				1EA753DB1C5D30BF004F0022 /* Frameworks */,
+				1EA753DC1C5D30BF004F0022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Drinko;
+			productName = Drinko;
+			productReference = 1EA753DE1C5D30BF004F0022 /* Drinko.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1EA753F91C5D30BF004F0022 /* DrinkoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EA754111C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoTests" */;
+			buildPhases = (
+				1EA753F61C5D30BF004F0022 /* Sources */,
+				1EA753F71C5D30BF004F0022 /* Frameworks */,
+				1EA753F81C5D30BF004F0022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EA753FC1C5D30BF004F0022 /* PBXTargetDependency */,
+			);
+			name = DrinkoTests;
+			productName = DrinkoTests;
+			productReference = 1EA753FA1C5D30BF004F0022 /* DrinkoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1EA754041C5D30BF004F0022 /* DrinkoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1EA754141C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoUITests" */;
+			buildPhases = (
+				1EA754011C5D30BF004F0022 /* Sources */,
+				1EA754021C5D30BF004F0022 /* Frameworks */,
+				1EA754031C5D30BF004F0022 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1EA754071C5D30BF004F0022 /* PBXTargetDependency */,
+			);
+			name = DrinkoUITests;
+			productName = DrinkoUITests;
+			productReference = 1EA754051C5D30BF004F0022 /* DrinkoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1EA753D61C5D30BF004F0022 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Tsvetan Razsolkov";
+				TargetAttributes = {
+					1EA753DD1C5D30BF004F0022 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					1EA753F91C5D30BF004F0022 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1EA753DD1C5D30BF004F0022;
+					};
+					1EA754041C5D30BF004F0022 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1EA753DD1C5D30BF004F0022;
+					};
+				};
+			};
+			buildConfigurationList = 1EA753D91C5D30BF004F0022 /* Build configuration list for PBXProject "Drinko" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1EA753D51C5D30BF004F0022;
+			productRefGroup = 1EA753DF1C5D30BF004F0022 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1EA753DD1C5D30BF004F0022 /* Drinko */,
+				1EA753F91C5D30BF004F0022 /* DrinkoTests */,
+				1EA754041C5D30BF004F0022 /* DrinkoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1EA753DC1C5D30BF004F0022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EA753F41C5D30BF004F0022 /* LaunchScreen.storyboard in Resources */,
+				1EA754231C5D40BA004F0022 /* StartGameViewController.xib in Resources */,
+				1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */,
+				1EA753F11C5D30BF004F0022 /* Assets.xcassets in Resources */,
+				1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */,
+				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
+				1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA753F81C5D30BF004F0022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA754031C5D30BF004F0022 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1EA753DA1C5D30BF004F0022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
+				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
+				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
+				1EA753E31C5D30BF004F0022 /* main.m in Sources */,
+				1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */,
+				1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA753F61C5D30BF004F0022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EA753FF1C5D30BF004F0022 /* DrinkoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1EA754011C5D30BF004F0022 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EA7540A1C5D30BF004F0022 /* DrinkoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1EA753FC1C5D30BF004F0022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EA753DD1C5D30BF004F0022 /* Drinko */;
+			targetProxy = 1EA753FB1C5D30BF004F0022 /* PBXContainerItemProxy */;
+		};
+		1EA754071C5D30BF004F0022 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1EA753DD1C5D30BF004F0022 /* Drinko */;
+			targetProxy = 1EA754061C5D30BF004F0022 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1EA753EA1C5D30BF004F0022 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EA753EB1C5D30BF004F0022 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1EA753F21C5D30BF004F0022 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1EA753F31C5D30BF004F0022 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1EA7540C1C5D30BF004F0022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1EA7540D1C5D30BF004F0022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1EA7540F1C5D30BF004F0022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drinko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1EA754101C5D30BF004F0022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Drinko/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1EA754121C5D30BF004F0022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DrinkoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.DrinkoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drinko.app/Drinko";
+			};
+			name = Debug;
+		};
+		1EA754131C5D30BF004F0022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = DrinkoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.DrinkoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Drinko.app/Drinko";
+			};
+			name = Release;
+		};
+		1EA754151C5D30BF004F0022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DrinkoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.DrinkoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Drinko;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1EA754161C5D30BF004F0022 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = DrinkoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.DrinkoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Drinko;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1EA753D91C5D30BF004F0022 /* Build configuration list for PBXProject "Drinko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EA7540C1C5D30BF004F0022 /* Debug */,
+				1EA7540D1C5D30BF004F0022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1EA7540E1C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "Drinko" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EA7540F1C5D30BF004F0022 /* Debug */,
+				1EA754101C5D30BF004F0022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EA754111C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EA754121C5D30BF004F0022 /* Debug */,
+				1EA754131C5D30BF004F0022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1EA754141C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1EA754151C5D30BF004F0022 /* Debug */,
+				1EA754161C5D30BF004F0022 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1EA753EE1C5D30BF004F0022 /* Drinko.xcdatamodel */,
+			);
+			currentVersion = 1EA753EE1C5D30BF004F0022 /* Drinko.xcdatamodel */;
+			path = Drinko.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1EA753D61C5D30BF004F0022 /* Project object */;
+}
