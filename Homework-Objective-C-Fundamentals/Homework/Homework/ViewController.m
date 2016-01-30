@@ -27,6 +27,8 @@
         self.phones = [[NSMutableArray alloc] init] ;
     }
     
+    
+    self.phoneTableView.delegate = self;
     self.phoneTableView.dataSource = self;
     
 }
@@ -63,24 +65,34 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSString *whiteCellToDetails = @"whiteCellToDetailsSegue";
-    NSString *grayCellToDetails = @"grayCellToDetailsSegue";
+//    NSString *whiteCellToDetails = @"whiteCellToDetailsSegue";
+//    NSString *grayCellToDetails = @"grayCellToDetailsSegue";
     NSString *toAddNewPhone = @"toAddNewPhone";
-    Phone *selectedPhone;
-    if ([segue.identifier isEqualToString:whiteCellToDetails] || [segue.identifier isEqualToString:grayCellToDetails]) {
-        NSIndexPath *indexPath = [self.phoneTableView indexPathForCell:sender];
-        selectedPhone = self.phones[indexPath.row];
-        DetailsViewController* toVC = segue.destinationViewController;
-        toVC.phone = selectedPhone;        
-    }
+//    Phone *selectedPhone;
+//    if ([segue.identifier isEqualToString:whiteCellToDetails] || [segue.identifier isEqualToString:grayCellToDetails]) {
+//        NSIndexPath *indexPath = [self.phoneTableView indexPathForCell:sender];
+//        selectedPhone = self.phones[indexPath.row];
+//        DetailsViewController* toVC = segue.destinationViewController;
+//        toVC.phone = selectedPhone;        
+//    }
     if ([segue.identifier isEqualToString:toAddNewPhone]) {
         AddNewPhoneViewController* toVC = segue.destinationViewController;
         toVC.phones = self.phones;
     }
 }
 
-//-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//}
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    Phone *phone = [self.phones objectAtIndex:indexPath.row];
+    NSString *storyBoardId = @"details view";
+    
+    DetailsViewController *detailsVC =
+    [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    detailsVC.phone = phone;
+    
+    //         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    //    appDelegate.window.rootViewController = detailsVC;
+    [self.navigationController pushViewController:detailsVC animated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
