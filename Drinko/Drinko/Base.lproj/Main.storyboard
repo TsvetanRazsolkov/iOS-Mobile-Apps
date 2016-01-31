@@ -85,6 +85,24 @@
             </objects>
             <point key="canvasLocation" x="1663" y="224"/>
         </scene>
+        <!--Details View Controller-->
+        <scene sceneID="ozC-Sf-dxp">
+            <objects>
+                <viewController id="DCA-Va-hzo" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TjO-l7-Mf7"/>
+                        <viewControllerLayoutGuide type="bottom" id="MCX-AE-jSn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1op-RV-yhc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jaR-kv-cja" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1780"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="RGX-d4-Y4M">
             <objects>
@@ -115,64 +133,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-R6-uaC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwN-R6-uaC">
                                 <rect key="frame" x="30" y="152" width="540" height="287"/>
                                 <color key="backgroundColor" red="1" green="0.95028507966181885" blue="0.99319588070476961" alpha="0.0" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="yellowCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="yellowCell" id="aYq-L0-3vi">
-                                        <rect key="frame" x="0.0" y="92" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aYq-L0-3vi" id="cH0-c0-MnZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431372549022" green="0.89803921568627454" blue="0.17254901960784313" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="blueCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="blueCell" id="6tr-4K-QPp">
-                                        <rect key="frame" x="0.0" y="164" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6tr-4K-QPp" id="UlO-9f-VIw">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.36862745098039218" green="0.35686274509803922" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="redCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="redCell" id="RC7-46-1px">
-                                        <rect key="frame" x="0.0" y="236" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RC7-46-1px" id="8m9-Rp-hrk">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.8784313725490196" green="0.0" blue="0.14509803921568629" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="blackCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="blackCell" id="N3D-Kc-coY">
-                                        <rect key="frame" x="0.0" y="308" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N3D-Kc-coY" id="h0b-ML-5TG">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="greenCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="greenCell" id="AT5-5C-Ash">
-                                        <rect key="frame" x="0.0" y="380" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AT5-5C-Ash" id="mTy-3I-tKg">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.082352941176470587" green="0.47450980392156861" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="whiteCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="whiteCell" id="EdE-gM-wxA">
-                                        <rect key="frame" x="0.0" y="452" width="540" height="72"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EdE-gM-wxA" id="MAV-T4-SDX">
-                                            <rect key="frame" x="0.0" y="0.0" width="540" height="71"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <color key="sectionIndexBackgroundColor" red="0.10980392156862745" green="0.46274509803921571" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

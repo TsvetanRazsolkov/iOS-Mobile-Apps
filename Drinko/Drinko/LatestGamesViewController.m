@@ -7,6 +7,7 @@
 //
 
 #import "LatestGamesViewController.h"
+#import "GameInfoTableViewCell.h"
 
 @interface LatestGamesViewController ()
 
@@ -48,20 +49,34 @@ NSArray* arr;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
     
-    NSArray* cellIdentifiers = @[@"yellowCell", @"blueCell", @"redCell", @"blackCell", @"greenCell", @"whiteCell" ];
+    static NSString *customCellIdentifier = @"gameInfoCustomCell";
+    
+    NSArray* backgroundColours = [[NSArray alloc] initWithObjects:
+                                  [UIColor colorWithRed:245.0f/255.0f                                                                                                                                                                       green:229.0f/255.0f                                                                                                                                                                        blue:44.0f/255.0f                                                                                                                                                                       alpha:1.0f],
+                                  [UIColor colorWithRed:94.0f/255.0f                                                                                                                                                                       green:91.0f/255.0f                                                                                                                                                                        blue:230.0f/255.0f                                                                                                                                                                       alpha:1.0f],
+                                  [UIColor colorWithRed:224.0f/255.0f                                                                                                                                                                       green:0.0f/255.0f                                                                                                                                                                        blue:37.0f/255.0f                                                                                                                                                                       alpha:1.0f],
+                                  [UIColor blackColor],
+                                  [UIColor colorWithRed:23.0f/255.0f                                                                                                                                                                       green:120.0f/255.0f                                                                                                                                                                        blue:49.0f/255.0f                                                                                                                                                                       alpha:1.0f],
+                                  [UIColor whiteColor],nil];
+    
     NSArray* colours = [[NSArray alloc] initWithObjects:[UIColor blackColor],  [UIColor blackColor], [UIColor whiteColor],[UIColor whiteColor],[UIColor blackColor],[UIColor blackColor],nil];
     
+    GameInfoTableViewCell *cell = (GameInfoTableViewCell *)[tableView dequeueReusableCellWithIdentifier:customCellIdentifier];
     
-    NSString* cellIdentifier = cellIdentifiers[indexPath.row%6];
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    if (cell == nil)
+        
+    {
+        NSArray *nibArray = [[NSBundle mainBundle] loadNibNamed:@"GameInfoTableViewCell" owner:self options:nil];
+        
+        cell = [nibArray objectAtIndex:0];
+        
     }
     
-    cell.textLabel.text = arr[indexPath.row];
-    cell.textLabel.textColor = colours[indexPath.row % 6];
+    cell.gameInfoImageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+    
+    cell.gameInfoPlayersLabel.text = [arr objectAtIndex:indexPath.row];
+    cell.gameInfoPlayersLabel.textColor = colours[indexPath.row % 6];
+    cell.backgroundColor = [backgroundColours objectAtIndex:indexPath.row%6];
     cell.layer.cornerRadius = 20; // 37 for rounded corners;
     cell.layer.masksToBounds = YES;
     cell.tag = indexPath.row;

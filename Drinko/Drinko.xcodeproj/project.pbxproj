@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659041C5E3654009D7CF4 /* DetailsViewController.m */; };
+		1E2659071C5E3654009D7CF4 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */; };
+		1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */; };
+		1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */; };
+		1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */; };
 		1EA753E31C5D30BF004F0022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E21C5D30BF004F0022 /* main.m */; };
 		1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E51C5D30BF004F0022 /* AppDelegate.m */; };
 		1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753EA1C5D30BF004F0022 /* Main.storyboard */; };
@@ -42,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2659031C5E3654009D7CF4 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		1E2659041C5E3654009D7CF4 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
+		1E2659681C5E4AE5009D7CF4 /* GameInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoTableViewCell.h; sourceTree = "<group>"; };
+		1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoTableViewCell.m; sourceTree = "<group>"; };
+		1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameInfoTableViewCell.xib; sourceTree = "<group>"; };
+		1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultGameInfoImage.png; sourceTree = "<group>"; };
 		1EA753DE1C5D30BF004F0022 /* Drinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA753E21C5D30BF004F0022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EA753E41C5D30BF004F0022 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -94,6 +106,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E2659081C5E38B3009D7CF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1E2659091C5E3D28009D7CF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E2659681C5E4AE5009D7CF4 /* GameInfoTableViewCell.h */,
+				1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */,
+				1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		1EA753D51C5D30BF004F0022 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +146,8 @@
 		1EA753E01C5D30BF004F0022 /* Drinko */ = {
 			isa = PBXGroup;
 			children = (
+				1E2659091C5E3D28009D7CF4 /* Views */,
+				1E2659081C5E38B3009D7CF4 /* Models */,
 				1EA7541B1C5D32D0004F0022 /* Resources */,
 				1EA754171C5D30F9004F0022 /* ViewControllers */,
 				1EA753E41C5D30BF004F0022 /* AppDelegate.h */,
@@ -168,6 +199,9 @@
 				1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */,
 				1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */,
 				1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */,
+				1E2659031C5E3654009D7CF4 /* DetailsViewController.h */,
+				1E2659041C5E3654009D7CF4 /* DetailsViewController.m */,
+				1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -183,6 +217,7 @@
 		1EA7541C1C5D32D8004F0022 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */,
 				1EA7542D1C5D625B004F0022 /* mainPageBackground.png */,
 				1EA7542B1C5D6247004F0022 /* commonBackground.png */,
 			);
@@ -296,9 +331,12 @@
 				1EA754231C5D40BA004F0022 /* StartGameViewController.xib in Resources */,
 				1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */,
 				1EA753F11C5D30BF004F0022 /* Assets.xcassets in Resources */,
+				1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */,
+				1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */,
 				1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */,
 				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
 				1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */,
+				1E2659071C5E3654009D7CF4 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,7 +364,9 @@
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
+				1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */,
 				1EA753E31C5D30BF004F0022 /* main.m in Sources */,
+				1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */,
 				1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */,
 				1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */,
 			);
@@ -554,6 +594,7 @@
 				1EA754101C5D30BF004F0022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EA754111C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoTests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +603,7 @@
 				1EA754131C5D30BF004F0022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1EA754141C5D30BF004F0022 /* Build configuration list for PBXNativeTarget "DrinkoUITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +612,7 @@
 				1EA754161C5D30BF004F0022 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
