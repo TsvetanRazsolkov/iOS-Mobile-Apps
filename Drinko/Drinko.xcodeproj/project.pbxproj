@@ -12,6 +12,14 @@
 		1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */; };
 		1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */; };
 		1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */; };
+		1E2659761C5EC66A009D7CF4 /* PlayersCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659741C5EC66A009D7CF4 /* PlayersCollectionViewCell.m */; };
+		1E2659771C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659751C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib */; };
+		1E26597E1C5ECDF6009D7CF4 /* playerIcon1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659781C5ECDF6009D7CF4 /* playerIcon1.png */; };
+		1E26597F1C5ECDF6009D7CF4 /* playerIcon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659791C5ECDF6009D7CF4 /* playerIcon2.png */; };
+		1E2659801C5ECDF6009D7CF4 /* playerIcon3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597A1C5ECDF6009D7CF4 /* playerIcon3.png */; };
+		1E2659811C5ECDF6009D7CF4 /* playerIcon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597B1C5ECDF6009D7CF4 /* playerIcon4.png */; };
+		1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */; };
+		1E2659831C5ECDF6009D7CF4 /* playerIcon6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */; };
 		1EA753E31C5D30BF004F0022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E21C5D30BF004F0022 /* main.m */; };
 		1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E51C5D30BF004F0022 /* AppDelegate.m */; };
 		1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753EA1C5D30BF004F0022 /* Main.storyboard */; };
@@ -54,6 +62,15 @@
 		1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoTableViewCell.m; sourceTree = "<group>"; };
 		1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameInfoTableViewCell.xib; sourceTree = "<group>"; };
 		1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultGameInfoImage.png; sourceTree = "<group>"; };
+		1E2659731C5EC66A009D7CF4 /* PlayersCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayersCollectionViewCell.h; sourceTree = "<group>"; };
+		1E2659741C5EC66A009D7CF4 /* PlayersCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayersCollectionViewCell.m; sourceTree = "<group>"; };
+		1E2659751C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlayersCollectionViewCell.xib; sourceTree = "<group>"; };
+		1E2659781C5ECDF6009D7CF4 /* playerIcon1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon1.png; sourceTree = "<group>"; };
+		1E2659791C5ECDF6009D7CF4 /* playerIcon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon2.png; sourceTree = "<group>"; };
+		1E26597A1C5ECDF6009D7CF4 /* playerIcon3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon3.png; sourceTree = "<group>"; };
+		1E26597B1C5ECDF6009D7CF4 /* playerIcon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon4.png; sourceTree = "<group>"; };
+		1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon5.png; sourceTree = "<group>"; };
+		1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon6.png; sourceTree = "<group>"; };
 		1EA753DE1C5D30BF004F0022 /* Drinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA753E21C5D30BF004F0022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EA753E41C5D30BF004F0022 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -119,6 +136,9 @@
 				1E2659681C5E4AE5009D7CF4 /* GameInfoTableViewCell.h */,
 				1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */,
 				1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */,
+				1E2659731C5EC66A009D7CF4 /* PlayersCollectionViewCell.h */,
+				1E2659741C5EC66A009D7CF4 /* PlayersCollectionViewCell.m */,
+				1E2659751C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -220,6 +240,12 @@
 				1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */,
 				1EA7542D1C5D625B004F0022 /* mainPageBackground.png */,
 				1EA7542B1C5D6247004F0022 /* commonBackground.png */,
+				1E2659781C5ECDF6009D7CF4 /* playerIcon1.png */,
+				1E2659791C5ECDF6009D7CF4 /* playerIcon2.png */,
+				1E26597A1C5ECDF6009D7CF4 /* playerIcon3.png */,
+				1E26597B1C5ECDF6009D7CF4 /* playerIcon4.png */,
+				1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */,
+				1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -332,9 +358,16 @@
 				1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */,
 				1EA753F11C5D30BF004F0022 /* Assets.xcassets in Resources */,
 				1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */,
+				1E26597E1C5ECDF6009D7CF4 /* playerIcon1.png in Resources */,
 				1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */,
 				1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */,
+				1E2659811C5ECDF6009D7CF4 /* playerIcon4.png in Resources */,
+				1E26597F1C5ECDF6009D7CF4 /* playerIcon2.png in Resources */,
+				1E2659771C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib in Resources */,
+				1E2659831C5ECDF6009D7CF4 /* playerIcon6.png in Resources */,
 				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
+				1E2659801C5ECDF6009D7CF4 /* playerIcon3.png in Resources */,
+				1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */,
 				1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */,
 				1E2659071C5E3654009D7CF4 /* DetailsViewController.xib in Resources */,
 			);
@@ -364,6 +397,7 @@
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
+				1E2659761C5EC66A009D7CF4 /* PlayersCollectionViewCell.m in Sources */,
 				1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */,
 				1EA753E31C5D30BF004F0022 /* main.m in Sources */,
 				1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */,

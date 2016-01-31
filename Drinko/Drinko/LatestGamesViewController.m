@@ -8,6 +8,7 @@
 
 #import "LatestGamesViewController.h"
 #import "GameInfoTableViewCell.h"
+#import "DetailsViewController.h"
 
 @interface LatestGamesViewController ()
 
@@ -83,6 +84,18 @@ NSArray* arr;
     
     return cell;
 }
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *storyBoardId = @"details view";
+    
+    DetailsViewController *detailsVC =
+    [self.storyboard instantiateViewControllerWithIdentifier:storyBoardId];
+    
+    //         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    //    appDelegate.window.rootViewController = detailsVC;
+    [self.navigationController pushViewController:detailsVC animated:YES];
+}
+
 
 
 /*
