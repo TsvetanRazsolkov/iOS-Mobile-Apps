@@ -21,9 +21,10 @@
     [[UIImage imageNamed:@"commonBackground.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];    
     // Do any additional setup after loading the view from its nib.
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

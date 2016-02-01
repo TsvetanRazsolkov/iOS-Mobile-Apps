@@ -7,8 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface DetailsViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+
+@property float latitude;
+@property float longitude;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *playersCollectionView;
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) IBOutlet UILabel *playedOnLabel;
 
 @end

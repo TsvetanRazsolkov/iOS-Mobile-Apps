@@ -19,6 +19,7 @@
 		1E2659811C5ECDF6009D7CF4 /* playerIcon4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597B1C5ECDF6009D7CF4 /* playerIcon4.png */; };
 		1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */; };
 		1E2659831C5ECDF6009D7CF4 /* playerIcon6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */; };
+		1EA579D21C5FCCE400B999F6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA579D11C5FCCE400B999F6 /* MapKit.framework */; };
 		1EA753E31C5D30BF004F0022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E21C5D30BF004F0022 /* main.m */; };
 		1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E51C5D30BF004F0022 /* AppDelegate.m */; };
 		1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753EA1C5D30BF004F0022 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		1E26597B1C5ECDF6009D7CF4 /* playerIcon4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon4.png; sourceTree = "<group>"; };
 		1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon5.png; sourceTree = "<group>"; };
 		1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon6.png; sourceTree = "<group>"; };
+		1EA579D11C5FCCE400B999F6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		1EA753DE1C5D30BF004F0022 /* Drinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA753E21C5D30BF004F0022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EA753E41C5D30BF004F0022 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA579D21C5FCCE400B999F6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +143,7 @@
 		1EA753D51C5D30BF004F0022 = {
 			isa = PBXGroup;
 			children = (
+				1EA579D11C5FCCE400B999F6 /* MapKit.framework */,
 				1EA753E01C5D30BF004F0022 /* Drinko */,
 				1EA753FD1C5D30BF004F0022 /* DrinkoTests */,
 				1EA754081C5D30BF004F0022 /* DrinkoUITests */,

@@ -93,6 +93,9 @@ NSArray* arr;
     
     //         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     //    appDelegate.window.rootViewController = detailsVC;
+    
+    detailsVC.latitude = 39.281516;
+    detailsVC.longitude = -76.580806;
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
 

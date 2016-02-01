@@ -9,6 +9,9 @@
 #import "DetailsViewController.h"
 #import "PlayersCollectionViewCell.h"
 
+#define METERS_PER_MILE 1609.344
+
+
 @interface DetailsViewController ()
 
 @end
@@ -36,6 +39,25 @@ NSArray* playerNames;
     [self.playersCollectionView registerNib:nib forCellWithReuseIdentifier:@"playerCustomCell"];
 
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    // 1
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = self.latitude;
+    zoomLocation.longitude= self.longitude;
+    
+    // 2
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.1*METERS_PER_MILE, 0.1*METERS_PER_MILE);
+    
+    // 3
+    [_mapView setRegion:viewRegion animated:YES];
+    
+    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+    [annotation setCoordinate:zoomLocation];
+    [annotation setTitle:@"Played here!"];
+    [self.mapView addAnnotation:annotation];
+    [self.mapView selectAnnotation:annotation animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
