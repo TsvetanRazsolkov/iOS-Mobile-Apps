@@ -31,6 +31,10 @@ NSArray* playerNames;
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    UINib *nib = [UINib nibWithNibName:@"PlayersCollectionViewCell" bundle: nil];
+    [self.playersCollectionView registerNib:nib forCellWithReuseIdentifier:@"playerCustomCell"];
+
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -62,14 +66,6 @@ NSArray* playerNames;
                                   [UIColor whiteColor],nil];
     
     NSArray* colours = [[NSArray alloc] initWithObjects:[UIColor blackColor],  [UIColor blackColor], [UIColor whiteColor],[UIColor whiteColor],[UIColor blackColor],[UIColor blackColor],nil];
-    
-    static BOOL nibMyCellloaded = NO;
-    if(!nibMyCellloaded)
-    {
-        UINib *nib = [UINib nibWithNibName:@"PlayersCollectionViewCell" bundle: nil];
-        [self.playersCollectionView registerNib:nib forCellWithReuseIdentifier:customCellIdentifier];
-        nibMyCellloaded = YES;
-    }
     
     PlayersCollectionViewCell *cell = (PlayersCollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:customCellIdentifier forIndexPath:indexPath];
     

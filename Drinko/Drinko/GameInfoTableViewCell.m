@@ -10,8 +10,6 @@
 
 @implementation GameInfoTableViewCell
 
-@synthesize gameInfoImageView,gameInfoPlayersLabel;
-
 - (void)awakeFromNib {
     // Initialization code
 }

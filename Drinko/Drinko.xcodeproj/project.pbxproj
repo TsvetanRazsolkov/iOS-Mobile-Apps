@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659041C5E3654009D7CF4 /* DetailsViewController.m */; };
-		1E2659071C5E3654009D7CF4 /* DetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */; };
 		1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */; };
 		1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */; };
 		1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */; };
@@ -30,11 +29,9 @@
 		1EA7540A1C5D30BF004F0022 /* DrinkoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754091C5D30BF004F0022 /* DrinkoUITests.m */; };
 		1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754191C5D314F004F0022 /* MainPageViewController.m */; };
 		1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754201C5D40BA004F0022 /* StartGameViewController.m */; };
-		1EA754231C5D40BA004F0022 /* StartGameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA754211C5D40BA004F0022 /* StartGameViewController.xib */; };
 		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
 		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
 		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
-		1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +54,6 @@
 /* Begin PBXFileReference section */
 		1E2659031C5E3654009D7CF4 /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		1E2659041C5E3654009D7CF4 /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
-		1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailsViewController.xib; sourceTree = "<group>"; };
 		1E2659681C5E4AE5009D7CF4 /* GameInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameInfoTableViewCell.h; sourceTree = "<group>"; };
 		1E2659691C5E4AE5009D7CF4 /* GameInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameInfoTableViewCell.m; sourceTree = "<group>"; };
 		1E26596A1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -90,12 +86,10 @@
 		1EA754191C5D314F004F0022 /* MainPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainPageViewController.m; sourceTree = "<group>"; };
 		1EA7541F1C5D40BA004F0022 /* StartGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartGameViewController.h; sourceTree = "<group>"; };
 		1EA754201C5D40BA004F0022 /* StartGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartGameViewController.m; sourceTree = "<group>"; };
-		1EA754211C5D40BA004F0022 /* StartGameViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StartGameViewController.xib; sourceTree = "<group>"; };
 		1EA7542B1C5D6247004F0022 /* commonBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = commonBackground.png; sourceTree = "<group>"; };
 		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
 		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
 		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
-		1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LatestGamesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,13 +209,10 @@
 				1EA754191C5D314F004F0022 /* MainPageViewController.m */,
 				1EA7541F1C5D40BA004F0022 /* StartGameViewController.h */,
 				1EA754201C5D40BA004F0022 /* StartGameViewController.m */,
-				1EA754211C5D40BA004F0022 /* StartGameViewController.xib */,
 				1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */,
 				1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */,
-				1EA754311C5D65BA004F0022 /* LatestGamesViewController.xib */,
 				1E2659031C5E3654009D7CF4 /* DetailsViewController.h */,
 				1E2659041C5E3654009D7CF4 /* DetailsViewController.m */,
-				1E2659051C5E3654009D7CF4 /* DetailsViewController.xib */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -354,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EA753F41C5D30BF004F0022 /* LaunchScreen.storyboard in Resources */,
-				1EA754231C5D40BA004F0022 /* StartGameViewController.xib in Resources */,
 				1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */,
 				1EA753F11C5D30BF004F0022 /* Assets.xcassets in Resources */,
 				1E26596C1C5E4AE5009D7CF4 /* GameInfoTableViewCell.xib in Resources */,
@@ -368,8 +358,6 @@
 				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
 				1E2659801C5ECDF6009D7CF4 /* playerIcon3.png in Resources */,
 				1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */,
-				1EA754331C5D65BA004F0022 /* LatestGamesViewController.xib in Resources */,
-				1E2659071C5E3654009D7CF4 /* DetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
