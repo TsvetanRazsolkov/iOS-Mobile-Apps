@@ -20,6 +20,7 @@ NSArray* arr;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Latest Games";
     
     self.latestGamesTableView.delegate = self;
     self.latestGamesTableView.dataSource = self;
@@ -94,8 +95,8 @@ NSArray* arr;
     //         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     //    appDelegate.window.rootViewController = detailsVC;
     
-    detailsVC.latitude = 39.281516;
-    detailsVC.longitude = -76.580806;
+    detailsVC.latitude = 42.6508509;
+    detailsVC.longitude = 23.3772423;
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
 

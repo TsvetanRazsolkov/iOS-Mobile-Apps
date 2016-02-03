@@ -16,12 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Add Players and Drinks";
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"commonBackground.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
+    
+    self.btnAddPlayer.layer.cornerRadius = 15;
+    self.btnAddDrink.layer.cornerRadius=15;
+    self.btnStartGame.layer.cornerRadius = 15;
+    
+    self.labelPlayerNames.layer.cornerRadius = 20;
+    self.labelPlayerNames.layer.masksToBounds = YES;
+    self.labelDrinks.layer.cornerRadius = 20;
+    self.labelDrinks.layer.masksToBounds = YES;
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -41,4 +52,8 @@
 }
 */
 
+- (IBAction)AddPLayer:(id)sender {
+}
+- (IBAction)AddDrink:(id)sender {
+}
 @end

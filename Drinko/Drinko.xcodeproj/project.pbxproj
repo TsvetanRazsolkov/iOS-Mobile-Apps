@@ -20,6 +20,8 @@
 		1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */; };
 		1E2659831C5ECDF6009D7CF4 /* playerIcon6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */; };
 		1EA579D21C5FCCE400B999F6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA579D11C5FCCE400B999F6 /* MapKit.framework */; };
+		1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA579D41C60018C00B999F6 /* GameViewController.m */; };
+		1EA579D71C60096800B999F6 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EA579D61C60096800B999F6 /* CoreLocation.framework */; };
 		1EA753E31C5D30BF004F0022 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E21C5D30BF004F0022 /* main.m */; };
 		1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA753E51C5D30BF004F0022 /* AppDelegate.m */; };
 		1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1EA753EA1C5D30BF004F0022 /* Main.storyboard */; };
@@ -33,6 +35,7 @@
 		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
 		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
 		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
+		1ED95BF91C629D470048E44A /* TRCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED95BF81C629D470048E44A /* TRCoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		1E26597C1C5ECDF6009D7CF4 /* playerIcon5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon5.png; sourceTree = "<group>"; };
 		1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playerIcon6.png; sourceTree = "<group>"; };
 		1EA579D11C5FCCE400B999F6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1EA579D31C60018C00B999F6 /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		1EA579D41C60018C00B999F6 /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		1EA579D61C60096800B999F6 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1EA753DE1C5D30BF004F0022 /* Drinko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drinko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EA753E21C5D30BF004F0022 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1EA753E41C5D30BF004F0022 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
 		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
 		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
+		1ED95BF71C629D470048E44A /* Drinko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drinko-Bridging-Header.h"; sourceTree = "<group>"; };
+		1ED95BF81C629D470048E44A /* TRCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA579D71C60096800B999F6 /* CoreLocation.framework in Frameworks */,
 				1EA579D21C5FCCE400B999F6 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,11 +152,11 @@
 		1EA753D51C5D30BF004F0022 = {
 			isa = PBXGroup;
 			children = (
-				1EA579D11C5FCCE400B999F6 /* MapKit.framework */,
 				1EA753E01C5D30BF004F0022 /* Drinko */,
 				1EA753FD1C5D30BF004F0022 /* DrinkoTests */,
 				1EA754081C5D30BF004F0022 /* DrinkoUITests */,
 				1EA753DF1C5D30BF004F0022 /* Products */,
+				1ED95BF51C6257150048E44A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -164,6 +173,7 @@
 		1EA753E01C5D30BF004F0022 /* Drinko */ = {
 			isa = PBXGroup;
 			children = (
+				1ED95BF61C629D150048E44A /* Data */,
 				1E2659091C5E3D28009D7CF4 /* Views */,
 				1E2659081C5E38B3009D7CF4 /* Models */,
 				1EA7541B1C5D32D0004F0022 /* Resources */,
@@ -217,6 +227,8 @@
 				1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */,
 				1E2659031C5E3654009D7CF4 /* DetailsViewController.h */,
 				1E2659041C5E3654009D7CF4 /* DetailsViewController.m */,
+				1EA579D31C60018C00B999F6 /* GameViewController.h */,
+				1EA579D41C60018C00B999F6 /* GameViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -243,6 +255,24 @@
 				1E26597D1C5ECDF6009D7CF4 /* playerIcon6.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		1ED95BF51C6257150048E44A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1EA579D61C60096800B999F6 /* CoreLocation.framework */,
+				1EA579D11C5FCCE400B999F6 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1ED95BF61C629D150048E44A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				1ED95BF81C629D470048E44A /* TRCoreData.swift */,
+				1ED95BF71C629D470048E44A /* Drinko-Bridging-Header.h */,
+			);
+			name = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,7 +416,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */,
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
+				1ED95BF91C629D470048E44A /* TRCoreData.swift in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
 				1E2659761C5EC66A009D7CF4 /* PlayersCollectionViewCell.m in Sources */,
@@ -535,10 +567,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Drinko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -546,10 +581,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Drinko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
 			};
 			name = Release;
 		};

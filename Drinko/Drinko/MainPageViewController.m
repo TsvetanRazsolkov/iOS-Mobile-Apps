@@ -7,8 +7,12 @@
 //
 
 #import "MainPageViewController.h"
+#import "StartGameViewController.h"
 
 @interface MainPageViewController ()
+@property (weak, nonatomic) IBOutlet UIButton *btnPlayWithTwo;
+@property (weak, nonatomic) IBOutlet UIButton *btnPlayWithSix;
+@property (weak, nonatomic) IBOutlet UIButton *btnLatest;
 
 @end
 
@@ -16,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Main Page";
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"mainPageBackground.png"] drawInRect:self.view.bounds];
@@ -23,7 +28,8 @@
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
-    self.btnPlay.layer.cornerRadius = 20;
+    self.btnPlayWithSix.layer.cornerRadius = 20;
+    self.btnPlayWithTwo.layer.cornerRadius = 20;
     self.btnLatest.layer.cornerRadius=20;
     // Do any additional setup after loading the view.
 }
@@ -33,14 +39,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    //NSString *toAddNewPhone = @"toAddNewPhone";
+    //    Phone *selectedPhone;
+        if ([segue.identifier isEqualToString:@"playWithTwoSegue"]) {
+            // Create game with type with two players and set it to the next controller as property;
+            StartGameViewController* toVC = segue.destinationViewController;
+            //toVC.game = created game;
+        }
+        else if([segue.identifier isEqualToString:@"playWithSixSegue"]){
+            // Create game with type with six players and set it to the next controller as property;
+            StartGameViewController* toVC = segue.destinationViewController;
+            //toVC.game = created game;
+        }
 }
-*/
+
 
 @end

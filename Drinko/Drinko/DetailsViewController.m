@@ -22,6 +22,7 @@ NSArray* playerNames;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Game Details Page";
     
     self.playersCollectionView.dataSource = self;
     self.playersCollectionView.delegate = self;
@@ -112,6 +113,29 @@ NSArray* playerNames;
 //
 //    
 //    return cell;
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    PlayersCollectionViewCell *cell = (PlayersCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    [self showAlertWithTitle:[NSString stringWithFormat:@"%@ drank:", cell.playerNameLabel.text] andMessage:@"Here we will format some drinks that will come somehow from the Game object"];
+}
+
+-(void)showAlertWithTitle: (NSString *) title andMessage: (NSString *) message{
+    UIAlertController * alert=   [UIAlertController
+                                  alertControllerWithTitle: title
+                                  message: message
+                                  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Nice!"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action)
+                                {}];
+    
+    [alert addAction:yesButton];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*

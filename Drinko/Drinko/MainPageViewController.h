@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MainPageViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *btnPlay;
-@property (weak, nonatomic) IBOutlet UIButton *btnLatest;
+
 
 @end
