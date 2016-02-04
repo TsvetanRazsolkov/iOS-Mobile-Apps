@@ -8,12 +8,17 @@
 
 #import "MainPageViewController.h"
 #import "StartGameViewController.h"
+#import "TRCoreData.h"
+#import "Drink.h"
+#import "Game.h"
+#import "Player.h"
 
 @interface MainPageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnPlayWithTwo;
 @property (weak, nonatomic) IBOutlet UIButton *btnPlayWithSix;
 @property (weak, nonatomic) IBOutlet UIButton *btnLatest;
 
+@property (strong, nonatomic) TRCoreData* dataHelper;
 @end
 
 @implementation MainPageViewController
@@ -32,6 +37,39 @@
     self.btnPlayWithTwo.layer.cornerRadius = 20;
     self.btnLatest.layer.cornerRadius=20;
     // Do any additional setup after loading the view.
+    
+    // this is initial seeding just for testing
+    [self seedDatabase];
+}
+
+// will be deleted, it is just for test seeding
+-(void) seedDatabase{
+    self.dataHelper = [[TRCoreData alloc] init];
+    [self.dataHelper setupCoreData];
+    
+    for (int j=0; j < 6; j++) {
+        Game* game = [NSEntityDescription insertNewObjectForEntityForName:@"Game" inManagedObjectContext:self.dataHelper.context];
+        
+        for (int i = 0; i < 6; i++) {
+            Player* player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.dataHelper.context];
+            [player setValue:[NSString stringWithFormat:@"Pesho %d", i] forKey:(@"name")];
+            
+            Drink* drink = [NSEntityDescription insertNewObjectForEntityForName:@"Drink" inManagedObjectContext:self.dataHelper.context];
+            [drink setValue:[NSString stringWithFormat:@"Bira %d", i] forKey:(@"name")];
+            [player addDrinksObject:drink];
+            [game addDrinksObject:drink];
+            [game addPlayersObject:player];
+        }
+        
+        [game setValue:@42.6508509 forKey:(@"latitude")];
+        [game setValue:@23.3772423 forKey:(@"longitude")];
+        [game setValue:[NSDate date] forKey:@"playedOn"];
+        [game setValue:@0 forKey:@"type"];
+        
+        [self.dataHelper.context insertObject:game];
+    }
+    
+    [self.dataHelper saveContext];
 }
 
 - (void)didReceiveMemoryWarning {

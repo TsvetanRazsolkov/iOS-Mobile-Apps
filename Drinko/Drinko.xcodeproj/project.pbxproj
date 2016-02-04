@@ -35,7 +35,13 @@
 		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
 		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
 		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
-		1ED95BF91C629D470048E44A /* TRCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ED95BF81C629D470048E44A /* TRCoreData.swift */; };
+		1EDDD56A1C636280009BB266 /* TRCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5691C636280009BB266 /* TRCoreData.m */; };
+		1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD57B1C637ECD009BB266 /* Game+CoreDataProperties.m */; };
+		1EDDD57F1C637ECD009BB266 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD57D1C637ECD009BB266 /* Game.m */; };
+		1EDDD5841C637EFB009BB266 /* Drink+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5811C637EFB009BB266 /* Drink+CoreDataProperties.m */; };
+		1EDDD5851C637EFB009BB266 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5831C637EFB009BB266 /* Drink.m */; };
+		1EDDD58A1C637F11009BB266 /* Player+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5871C637F11009BB266 /* Player+CoreDataProperties.m */; };
+		1EDDD58B1C637F11009BB266 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5891C637F11009BB266 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,8 +104,20 @@
 		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
 		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
 		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
-		1ED95BF71C629D470048E44A /* Drinko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drinko-Bridging-Header.h"; sourceTree = "<group>"; };
-		1ED95BF81C629D470048E44A /* TRCoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TRCoreData.swift; sourceTree = "<group>"; };
+		1EDDD5681C636280009BB266 /* TRCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCoreData.h; sourceTree = "<group>"; };
+		1EDDD5691C636280009BB266 /* TRCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCoreData.m; sourceTree = "<group>"; };
+		1EDDD57A1C637ECD009BB266 /* Game+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1EDDD57B1C637ECD009BB266 /* Game+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Game+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1EDDD57C1C637ECD009BB266 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		1EDDD57D1C637ECD009BB266 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		1EDDD5801C637EFB009BB266 /* Drink+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Drink+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1EDDD5811C637EFB009BB266 /* Drink+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Drink+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1EDDD5821C637EFB009BB266 /* Drink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Drink.h; sourceTree = "<group>"; };
+		1EDDD5831C637EFB009BB266 /* Drink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Drink.m; sourceTree = "<group>"; };
+		1EDDD5861C637F11009BB266 /* Player+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Player+CoreDataProperties.h"; sourceTree = "<group>"; };
+		1EDDD5871C637F11009BB266 /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
+		1EDDD5881C637F11009BB266 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		1EDDD5891C637F11009BB266 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +150,18 @@
 		1E2659081C5E38B3009D7CF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1EDDD57A1C637ECD009BB266 /* Game+CoreDataProperties.h */,
+				1EDDD57B1C637ECD009BB266 /* Game+CoreDataProperties.m */,
+				1EDDD57C1C637ECD009BB266 /* Game.h */,
+				1EDDD57D1C637ECD009BB266 /* Game.m */,
+				1EDDD5801C637EFB009BB266 /* Drink+CoreDataProperties.h */,
+				1EDDD5811C637EFB009BB266 /* Drink+CoreDataProperties.m */,
+				1EDDD5821C637EFB009BB266 /* Drink.h */,
+				1EDDD5831C637EFB009BB266 /* Drink.m */,
+				1EDDD5861C637F11009BB266 /* Player+CoreDataProperties.h */,
+				1EDDD5871C637F11009BB266 /* Player+CoreDataProperties.m */,
+				1EDDD5881C637F11009BB266 /* Player.h */,
+				1EDDD5891C637F11009BB266 /* Player.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -184,7 +214,6 @@
 				1EA753F01C5D30BF004F0022 /* Assets.xcassets */,
 				1EA753F21C5D30BF004F0022 /* LaunchScreen.storyboard */,
 				1EA753F51C5D30BF004F0022 /* Info.plist */,
-				1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */,
 				1EA753E11C5D30BF004F0022 /* Supporting Files */,
 			);
 			path = Drinko;
@@ -269,8 +298,9 @@
 		1ED95BF61C629D150048E44A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1ED95BF81C629D470048E44A /* TRCoreData.swift */,
-				1ED95BF71C629D470048E44A /* Drinko-Bridging-Header.h */,
+				1EDDD5681C636280009BB266 /* TRCoreData.h */,
+				1EDDD5691C636280009BB266 /* TRCoreData.m */,
+				1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -416,16 +446,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EDDD57F1C637ECD009BB266 /* Game.m in Sources */,
 				1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */,
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
-				1ED95BF91C629D470048E44A /* TRCoreData.swift in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
 				1E2659761C5EC66A009D7CF4 /* PlayersCollectionViewCell.m in Sources */,
+				1EDDD5851C637EFB009BB266 /* Drink.m in Sources */,
+				1EDDD5841C637EFB009BB266 /* Drink+CoreDataProperties.m in Sources */,
 				1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */,
+				1EDDD56A1C636280009BB266 /* TRCoreData.m in Sources */,
 				1EA753E31C5D30BF004F0022 /* main.m in Sources */,
 				1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */,
+				1EDDD58B1C637F11009BB266 /* Player.m in Sources */,
+				1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */,
 				1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */,
+				1EDDD58A1C637F11009BB266 /* Player+CoreDataProperties.m in Sources */,
 				1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +604,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Drinko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
@@ -582,6 +619,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = NO;
 				INFOPLIST_FILE = Drinko/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";

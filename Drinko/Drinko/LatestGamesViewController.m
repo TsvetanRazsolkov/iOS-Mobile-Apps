@@ -9,8 +9,14 @@
 #import "LatestGamesViewController.h"
 #import "GameInfoTableViewCell.h"
 #import "DetailsViewController.h"
+#import "TRCoreData.h"
+#import "Game.h"
+#import "Player.h"
+#import "Drink.h"
 
 @interface LatestGamesViewController ()
+
+@property (strong, nonatomic) TRCoreData* dataHelper;
 
 @end
 
@@ -25,6 +31,8 @@ NSArray* arr;
     self.latestGamesTableView.delegate = self;
     self.latestGamesTableView.dataSource = self;
     
+    [self loadData];
+    
     arr = [NSArray arrayWithObjects:@"Pesho",@"Gosho",@"Stamat",@"Mariika", @"Doncho", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", nil];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
@@ -33,6 +41,32 @@ NSArray* arr;
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     // Do any additional setup after loading the view from its nib.
+}
+
+-(void) loadData{
+    self.dataHelper = [[TRCoreData alloc] init];
+    [self.dataHelper setupCoreData];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Game"];
+    NSSortDescriptor *sort =
+    [NSSortDescriptor sortDescriptorWithKey:@"playedOn" ascending:NO];
+    [request setSortDescriptors:[NSArray arrayWithObject:sort]];
+    [request setFetchLimit:10];
+    
+    NSArray* bla = [self.dataHelper.context executeFetchRequest:request error:nil];
+    
+    NSLog(@"poshka");
+
+    for (Game *ga in bla) {
+        for (Player *playe in [ga players]) {
+            for (Drink *dr in [playe drinks]) {
+                NSLog(@"%@ drank: %@", playe.name, dr.name);
+                
+            }
+            
+        }
+    }
+    NSLog([NSString stringWithFormat:@"%@", bla]);
 }
 
 - (void)didReceiveMemoryWarning {
