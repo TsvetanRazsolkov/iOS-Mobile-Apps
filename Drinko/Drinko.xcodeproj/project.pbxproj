@@ -42,6 +42,9 @@
 		1EDDD5851C637EFB009BB266 /* Drink.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5831C637EFB009BB266 /* Drink.m */; };
 		1EDDD58A1C637F11009BB266 /* Player+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5871C637F11009BB266 /* Player+CoreDataProperties.m */; };
 		1EDDD58B1C637F11009BB266 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5891C637F11009BB266 /* Player.m */; };
+		1EDDD58F1C63D180009BB266 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD58E1C63D180009BB266 /* GameModel.m */; };
+		1EDDD5921C63D1D3009BB266 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5911C63D1D3009BB266 /* PlayerModel.m */; };
+		1EDDD5961C63F492009BB266 /* gamePageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDD5951C63F492009BB266 /* gamePageBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +121,11 @@
 		1EDDD5871C637F11009BB266 /* Player+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Player+CoreDataProperties.m"; sourceTree = "<group>"; };
 		1EDDD5881C637F11009BB266 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		1EDDD5891C637F11009BB266 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		1EDDD58D1C63D180009BB266 /* GameModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameModel.h; sourceTree = "<group>"; };
+		1EDDD58E1C63D180009BB266 /* GameModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameModel.m; sourceTree = "<group>"; };
+		1EDDD5901C63D1D3009BB266 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
+		1EDDD5911C63D1D3009BB266 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
+		1EDDD5951C63F492009BB266 /* gamePageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamePageBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +155,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1E2659081C5E38B3009D7CF4 /* Models */ = {
+		1E2659081C5E38B3009D7CF4 /* CoreDataModels */ = {
 			isa = PBXGroup;
 			children = (
 				1EDDD57A1C637ECD009BB266 /* Game+CoreDataProperties.h */,
@@ -163,7 +171,7 @@
 				1EDDD5881C637F11009BB266 /* Player.h */,
 				1EDDD5891C637F11009BB266 /* Player.m */,
 			);
-			name = Models;
+			name = CoreDataModels;
 			sourceTree = "<group>";
 		};
 		1E2659091C5E3D28009D7CF4 /* Views */ = {
@@ -203,9 +211,10 @@
 		1EA753E01C5D30BF004F0022 /* Drinko */ = {
 			isa = PBXGroup;
 			children = (
+				1EDDD58C1C63D12E009BB266 /* Models */,
 				1ED95BF61C629D150048E44A /* Data */,
 				1E2659091C5E3D28009D7CF4 /* Views */,
-				1E2659081C5E38B3009D7CF4 /* Models */,
+				1E2659081C5E38B3009D7CF4 /* CoreDataModels */,
 				1EA7541B1C5D32D0004F0022 /* Resources */,
 				1EA754171C5D30F9004F0022 /* ViewControllers */,
 				1EA753E41C5D30BF004F0022 /* AppDelegate.h */,
@@ -273,6 +282,7 @@
 		1EA7541C1C5D32D8004F0022 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1EDDD5951C63F492009BB266 /* gamePageBackground.png */,
 				1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */,
 				1EA7542D1C5D625B004F0022 /* mainPageBackground.png */,
 				1EA7542B1C5D6247004F0022 /* commonBackground.png */,
@@ -303,6 +313,17 @@
 				1EA753ED1C5D30BF004F0022 /* Drinko.xcdatamodeld */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		1EDDD58C1C63D12E009BB266 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1EDDD58D1C63D180009BB266 /* GameModel.h */,
+				1EDDD58E1C63D180009BB266 /* GameModel.m */,
+				1EDDD5901C63D1D3009BB266 /* PlayerModel.h */,
+				1EDDD5911C63D1D3009BB266 /* PlayerModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,6 +443,7 @@
 				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
 				1E2659801C5ECDF6009D7CF4 /* playerIcon3.png in Resources */,
 				1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */,
+				1EDDD5961C63F492009BB266 /* gamePageBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +469,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EDDD57F1C637ECD009BB266 /* Game.m in Sources */,
+				1EDDD58F1C63D180009BB266 /* GameModel.m in Sources */,
 				1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */,
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
@@ -462,6 +485,7 @@
 				1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */,
 				1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */,
 				1EDDD58A1C637F11009BB266 /* Player+CoreDataProperties.m in Sources */,
+				1EDDD5921C63D1D3009BB266 /* PlayerModel.m in Sources */,
 				1EA754221C5D40BA004F0022 /* StartGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

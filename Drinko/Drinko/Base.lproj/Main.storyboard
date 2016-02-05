@@ -20,14 +20,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ2-bI-1T0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.058920069419999999" green="0.53783821779999996" blue="0.2532492596" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                                <state key="normal" title="LATEST GAMES">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="bhs-dr-Hr8" kind="show" id="Ta6-nv-kj0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLa-PO-NLR">
+                                <rect key="frame" x="20" y="290" width="560" height="80"/>
+                                <color key="backgroundColor" red="0.058920069419999999" green="0.53783821779999996" blue="0.2532492596" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="0oU-mT-3tQ">
+                                        <variation key="heightClass=regular" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
+                                <state key="normal" title="PLAY WITH 2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0oU-mT-3tQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="0oU-mT-3tQ"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="oFV-Ky-IpB" kind="show" identifier="playWithTwoSegue" id="V3i-b6-bTz"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-yK-oIQ">
                                 <rect key="frame" x="20" y="290" width="560" height="80"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.058920069419999999" green="0.53783821779999996" blue="0.2532492596" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="IwC-bE-Ahf"/>
                                     <constraint firstAttribute="height" constant="80" id="KBO-bE-4iV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="32"/>
                                 <state key="normal" title="PLAY WITH 6">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -46,49 +83,16 @@
                                     <segue destination="oFV-Ky-IpB" kind="show" identifier="playWithSixSegue" id="2wA-qz-7dv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ2-bI-1T0">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.058920069419999999" green="0.53783821779999996" blue="0.2532492596" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="LATEST GAMES">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="bhs-dr-Hr8" kind="show" id="Ta6-nv-kj0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLa-PO-NLR">
-                                <rect key="frame" x="20" y="290" width="560" height="80"/>
-                                <color key="backgroundColor" red="0.36862745099999999" green="0.35686274509999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="0oU-mT-3tQ">
-                                        <variation key="heightClass=regular" constant="80"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="PLAY WITH 2">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0oU-mT-3tQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="0oU-mT-3tQ"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="oFV-Ky-IpB" kind="show" identifier="playWithTwoSegue" id="V3i-b6-bTz"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DLa-PO-NLR" firstAttribute="leading" secondItem="kqW-yK-oIQ" secondAttribute="leading" id="8Qh-Sd-lIj"/>
-                            <constraint firstItem="wQ2-bI-1T0" firstAttribute="trailing" secondItem="hwc-qI-jph" secondAttribute="trailingMargin" id="8bz-jf-f4h"/>
-                            <constraint firstItem="wQ2-bI-1T0" firstAttribute="leading" secondItem="hwc-qI-jph" secondAttribute="leadingMargin" id="9A3-Fl-X8N"/>
+                            <constraint firstItem="wQ2-bI-1T0" firstAttribute="trailing" secondItem="hwc-qI-jph" secondAttribute="trailingMargin" id="8bz-jf-f4h">
+                                <variation key="heightClass=regular" constant="-13"/>
+                            </constraint>
+                            <constraint firstItem="wQ2-bI-1T0" firstAttribute="leading" secondItem="hwc-qI-jph" secondAttribute="leadingMargin" id="9A3-Fl-X8N">
+                                <variation key="heightClass=regular" constant="13"/>
+                            </constraint>
                             <constraint firstItem="kqW-yK-oIQ" firstAttribute="trailing" secondItem="wQ2-bI-1T0" secondAttribute="trailing" id="9hm-Eo-GbC"/>
                             <constraint firstItem="DLa-PO-NLR" firstAttribute="trailing" secondItem="kqW-yK-oIQ" secondAttribute="trailing" id="AdT-UB-1ky"/>
                             <constraint firstItem="kqW-yK-oIQ" firstAttribute="leading" secondItem="hwc-qI-jph" secondAttribute="leadingMargin" id="IcQ-dq-JGA"/>
@@ -500,9 +504,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="yBN-CL-Fmb" appends="YES" id="cuf-J5-wJK"/>
+                        </connections>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9m3-ic-vij" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="yBN-CL-Fmb">
+                    <connections>
+                        <action selector="tapGesture:" destination="6GL-IC-POj" id="ej6-QJ-Zrb"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2426" y="223.5"/>
         </scene>
