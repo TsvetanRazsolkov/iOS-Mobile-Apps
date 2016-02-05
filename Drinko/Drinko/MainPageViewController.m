@@ -39,7 +39,7 @@
     // Do any additional setup after loading the view.
     
     // this is initial seeding just for testing
-    [self seedDatabase];
+    //[self seedDatabase];
 }
 
 // will be deleted, it is just for test seeding
@@ -88,7 +88,8 @@
         else if([segue.identifier isEqualToString:@"playWithSixSegue"]){
             // Create game with type with six players and set it to the next controller as property;
             StartGameViewController* toVC = segue.destinationViewController;
-            //toVC.game = created game;
+            GameModel* game = [[GameModel alloc] initWithType:0 latitude:0.0 andLongitude:0.0];
+            toVC.game = game;
         }
 }
 

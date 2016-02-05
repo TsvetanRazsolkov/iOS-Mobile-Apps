@@ -1,20 +1,19 @@
 //
-//  PlayerModel.m
+//  DrinkModel.m
 //  Drinko
 //
-//  Created by Tsvetan Razsolkov on 2/4/16.
+//  Created by Tsvetan Razsolkov on 2/5/16.
 //  Copyright © 2016 Tsvetan Razsolkov. All rights reserved.
 //
 
-#import "PlayerModel.h"
+#import "DrinkModel.h"
 
-@implementation PlayerModel
+@implementation DrinkModel
 
 -(instancetype) initWithName: (NSString*) name{
     self = [super init];
     if (self) {
         self.name = name;
-        self.drinks = [[NSMutableArray alloc] init];
     }
     
     return self;

@@ -10,27 +10,20 @@
 
 @implementation GameModel
 
-//-(instancetype *) initWithTitle:(NSString *)title
-//                          category:(NSString *)category
-//                           addInfo:(NSString *)addInfo
-//                              date:(NSDate *)date
-//                          latitude: (double) latitude
-//                         longitude: (double) longitude
-//                           picture:(NSData *)picture
-//                             owner:(NSString *)owner {
-//    self = [super init];
-//    if (self) {
-//        self.title = title;
-//        self.category = category;
-//        self.additionalInfo = addInfo;
-//        self.date = date;
-//        self.latitude = latitude;
-//        self.longitude = longitude;
-//        self.picture = picture;
-//        self.owner = owner;
-//    }
-//    
-//    return self;
-//}
+-(instancetype) initWithType: (int) gameType
+latitude: (double) latitude
+andLongitude: (double) longitude
+{
+    self = [super init];
+        if (self) {
+            self.type = gameType;
+            self.latitude = latitude;
+            self.longitude = longitude;
+            self.players = [[NSMutableArray alloc] init];
+            self.drinks = [[NSMutableArray alloc] init];
+       }   
+    
+    return self;
+}
 
 @end

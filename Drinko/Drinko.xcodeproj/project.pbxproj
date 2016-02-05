@@ -35,6 +35,7 @@
 		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
 		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
 		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
+		1ECE61C81C64F546007F2414 /* DrinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE61C71C64F546007F2414 /* DrinkModel.m */; };
 		1EDDD56A1C636280009BB266 /* TRCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5691C636280009BB266 /* TRCoreData.m */; };
 		1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD57B1C637ECD009BB266 /* Game+CoreDataProperties.m */; };
 		1EDDD57F1C637ECD009BB266 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD57D1C637ECD009BB266 /* Game.m */; };
@@ -107,6 +108,8 @@
 		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
 		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
 		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
+		1ECE61C61C64F546007F2414 /* DrinkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkModel.h; sourceTree = "<group>"; };
+		1ECE61C71C64F546007F2414 /* DrinkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkModel.m; sourceTree = "<group>"; };
 		1EDDD5681C636280009BB266 /* TRCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCoreData.h; sourceTree = "<group>"; };
 		1EDDD5691C636280009BB266 /* TRCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TRCoreData.m; sourceTree = "<group>"; };
 		1EDDD57A1C637ECD009BB266 /* Game+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Game+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				1EDDD58E1C63D180009BB266 /* GameModel.m */,
 				1EDDD5901C63D1D3009BB266 /* PlayerModel.h */,
 				1EDDD5911C63D1D3009BB266 /* PlayerModel.m */,
+				1ECE61C61C64F546007F2414 /* DrinkModel.h */,
+				1ECE61C71C64F546007F2414 /* DrinkModel.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -472,6 +477,7 @@
 				1EDDD58F1C63D180009BB266 /* GameModel.m in Sources */,
 				1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */,
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
+				1ECE61C81C64F546007F2414 /* DrinkModel.m in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
 				1E2659761C5EC66A009D7CF4 /* PlayersCollectionViewCell.m in Sources */,

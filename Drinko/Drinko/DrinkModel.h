@@ -1,16 +1,15 @@
 //
-//  PlayerModel.h
+//  DrinkModel.h
 //  Drinko
 //
-//  Created by Tsvetan Razsolkov on 2/4/16.
+//  Created by Tsvetan Razsolkov on 2/5/16.
 //  Copyright © 2016 Tsvetan Razsolkov. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface PlayerModel : NSObject
+@interface DrinkModel : NSObject
 
-@property (strong, nonatomic) NSMutableArray* drinks;
 @property (strong, nonatomic) NSString* name;
 
 -(instancetype) initWithName: (NSString*) name;

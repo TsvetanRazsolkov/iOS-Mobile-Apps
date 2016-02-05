@@ -53,6 +53,8 @@
                 x = 10;
             }
             
+            
+            
             if (row % 2 == 1 && x > self.view.bounds.size.width - 50) {
                 UIView* obstacle = [[UIView alloc] initWithFrame:
                                     CGRectMake(self.view.bounds.size.width - 50, y, 7, 7)];
@@ -83,7 +85,19 @@
     
     int squareY = self.view.bounds.size.height - 50;
     int squareX = 64;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 6; i++) {
+        if (i == 5) {
+            UILabel* zoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(squareX - self.view.bounds.size.width / 6, self.view.bounds.size.height - 50, 60, 50)];
+            
+            zoneLabel.textAlignment = NSTextAlignmentCenter;
+            zoneLabel.textColor = [UIColor whiteColor];
+            zoneLabel.font = [UIFont fontWithName:@"Arial" size:25];
+            zoneLabel.text = [NSString stringWithFormat:@"%d", i + 1 ];
+            
+            [self.view addSubview:zoneLabel];
+            
+            continue;
+        }
         UIView* square = [[UIView alloc] initWithFrame:
                           CGRectMake(squareX, squareY, 10, 50)];
         square.layer.cornerRadius =  0.5;
@@ -92,7 +106,16 @@
         [self.obstacles addObject:square];
         [self.view addSubview:square];
         
-        squareX += 69;
+        UILabel* zoneLabel = [[UILabel alloc] initWithFrame:CGRectMake(squareX - self.view.bounds.size.width / 6, self.view.bounds.size.height - 50, 60, 50)];
+        
+        zoneLabel.textAlignment = NSTextAlignmentCenter;
+        zoneLabel.textColor = [UIColor whiteColor];
+        zoneLabel.font = [UIFont fontWithName:@"Arial" size:25];
+        zoneLabel.text = [NSString stringWithFormat:@"%d", i + 1 ];
+        
+        [self.view addSubview:zoneLabel];
+        
+        squareX += self.view.bounds.size.width / 6;
     }
 }
 

@@ -16,4 +16,8 @@
 @property int type;
 @property double latitude;
 @property double longitude;
+
+-(instancetype) initWithType: (int) gameType
+                    latitude: (double) latitude
+                andLongitude: (double) longitude;
 @end

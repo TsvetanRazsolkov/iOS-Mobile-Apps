@@ -15,13 +15,13 @@
         <relationship name="players" optional="YES" toMany="YES" minCount="2" maxCount="6" deletionRule="Nullify" destinationEntity="Player" inverseName="game" inverseEntity="Player" syncable="YES"/>
     </entity>
     <entity name="Player" representedClassName="Player" syncable="YES">
-        <attribute name="name" optional="YES" attributeType="String" minValueString="2" maxValueString="12" defaultValueString="unknown" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" minValueString="2" maxValueString="20" defaultValueString="unknown" syncable="YES"/>
         <relationship name="drinks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Drink" inverseName="players" inverseEntity="Drink" syncable="YES"/>
         <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="players" inverseEntity="Game" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Game" positionX="-54" positionY="-9" width="128" height="150"/>
         <element name="Drink" positionX="-36" positionY="36" width="128" height="90"/>
+        <element name="Game" positionX="-54" positionY="-9" width="128" height="150"/>
         <element name="Player" positionX="-18" positionY="45" width="128" height="90"/>
     </elements>
 </model>

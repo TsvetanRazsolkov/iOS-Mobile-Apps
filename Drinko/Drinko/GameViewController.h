@@ -10,8 +10,12 @@
 #import <CoreLocation/CLLocationManager.h>
 #import <CoreLocation/CLLocationManagerDelegate.h>
 
+#import "GameModel.h"
+
 @interface GameViewController : UIViewController<CLLocationManagerDelegate>
 
 @property (nonatomic,retain) CLLocationManager *locationManager;
+
+@property GameModel* game;
 
 @end
