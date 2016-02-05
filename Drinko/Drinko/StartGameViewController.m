@@ -21,12 +21,15 @@
 - (IBAction)btnAddPlayerAndDrink:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnCloseAutocomplete;
 - (IBAction)hideAutocomplete:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnCloseDrinksAutocomplete;
+- (IBAction)hideDrinksAutocomplete:(id)sender;
 
 @property (strong, nonatomic) NSMutableArray* autocompletePlayerNames;
 @property (strong, nonatomic) NSMutableArray* allPlayerNames;
 @property (strong, nonatomic) NSMutableArray* allDrinks;
 @property (strong, nonatomic) NSMutableArray* autocompletelDrinkNames;
 @property (weak, nonatomic) IBOutlet UITableView *autocompleteTableView;
+@property (weak, nonatomic) IBOutlet UITableView *autocompleteDrinksTableView;
 
 @property (strong, nonatomic) TRCoreData* dataHelper;
 
@@ -50,9 +53,15 @@
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.hidden = YES;
     
+    self.autocompleteDrinksTableView.delegate = self;
+    self.autocompleteDrinksTableView.dataSource = self;
+    self.autocompleteDrinksTableView.hidden = YES;
+    
     self.btnCloseAutocomplete.hidden = YES;
+    self.btnCloseDrinksAutocomplete.hidden = YES;
     
     self.textFieldPlayerName.delegate = self;
+    self.textFieldDrink.delegate = self;
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"commonBackground.png"] drawInRect:self.view.bounds];
@@ -169,8 +178,12 @@
 #pragma mark Autocomplete stuff:
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger) section {
-    
-    return self.autocompletePlayerNames.count;
+    if (tableView == self.autocompleteTableView) {
+        return self.autocompletePlayerNames.count;
+    }
+    else {
+        return self.autocompletelDrinkNames.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -182,23 +195,36 @@
         cell = [[UITableViewCell alloc]
                  initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
-    
-    cell.textLabel.text = [self.autocompletePlayerNames objectAtIndex:indexPath.row];
-    cell.textLabel.font = [UIFont fontWithName:@"Arial" size:25];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
-    return cell;
+    if (tableView == self.autocompleteTableView) {
+        cell.textLabel.text = [self.autocompletePlayerNames objectAtIndex:indexPath.row];
+        cell.textLabel.font = [UIFont fontWithName:@"Arial" size:25];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        return cell;
+    }
+    else{
+        cell.textLabel.text = [self.autocompletelDrinkNames objectAtIndex:indexPath.row];
+        cell.textLabel.font = [UIFont fontWithName:@"Arial" size:25];
+        cell.textLabel.textAlignment = NSTextAlignmentCenter;
+        return cell;
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    if(tableView == self.autocompleteTableView){
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     self.textFieldPlayerName.text = selectedCell.textLabel.text;
-    
-    [self goPressed];
+        
+    [self fillPlayerPressed];
+    }
+    else{
+        UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+        self.textFieldDrink.text = selectedCell.textLabel.text;
+        [self fillDrinkPressed];
+    }
     
 }
 
-- (IBAction)goPressed {
+- (IBAction)fillPlayerPressed {
     
     [self.textFieldPlayerName resignFirstResponder];
     self.autocompleteTableView.hidden = YES;
@@ -209,10 +235,41 @@
     }
 }
 
-- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+- (IBAction)fillDrinkPressed {
     
-    // Put anything that starts with this substring into the autocomplete array
-    // The items in this array is what will show up in the table view
+    [self.textFieldDrink resignFirstResponder];
+    self.autocompleteDrinksTableView.hidden = YES;
+    self.btnCloseDrinksAutocomplete.hidden = YES;
+    
+    if (![self.allDrinks containsObject:self.textFieldDrink.text]) {
+        [self.allDrinks addObject:self.textFieldDrink.text];
+    }
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    if (textField == self.textFieldPlayerName) {
+        self.autocompleteTableView.hidden = NO;
+        self.btnCloseAutocomplete.hidden = NO;
+        
+        NSString *substring = [NSString stringWithString:textField.text];
+        substring = [substring stringByReplacingCharactersInRange:range withString:string];
+        [self searchAutocompletePlayerNameEntriesWithSubstring: substring];
+        return YES;
+    }
+    else{
+        self.autocompleteDrinksTableView.hidden = NO;
+        self.btnCloseDrinksAutocomplete.hidden = NO;
+        
+        NSString *substring = [NSString stringWithString:textField.text];
+        substring = [substring stringByReplacingCharactersInRange:range withString:string];
+        [self searchAutocompleteDrinkEntriesWithSubstring: substring];
+        return YES;
+
+    }
+    
+}
+- (void)searchAutocompletePlayerNameEntriesWithSubstring:(NSString *)substring {
+    
     [self.autocompletePlayerNames removeAllObjects];
     for(NSString *name in self.allPlayerNames) {
         NSRange substringRange = [name rangeOfString:substring options:NSCaseInsensitiveSearch];
@@ -223,18 +280,25 @@
     [self.autocompleteTableView reloadData];
 }
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    self.autocompleteTableView.hidden = NO;
-    self.btnCloseAutocomplete.hidden = NO;
+- (void)searchAutocompleteDrinkEntriesWithSubstring:(NSString *)substring {
     
-    NSString *substring = [NSString stringWithString:textField.text];
-    substring = [substring stringByReplacingCharactersInRange:range withString:string];
-    [self searchAutocompleteEntriesWithSubstring: substring];
-    return YES;
+    [self.autocompletePlayerNames removeAllObjects];
+    for(NSString *name in self.allDrinks) {
+        NSRange substringRange = [name rangeOfString:substring options:NSCaseInsensitiveSearch];
+        if (substringRange.location == 0) {
+            [self.autocompletelDrinkNames addObject:name];
+        }
+    }
+    [self.autocompleteDrinksTableView reloadData];
 }
+
 
 - (IBAction)hideAutocomplete:(id)sender {
     self.autocompleteTableView.hidden = YES;
     self.btnCloseAutocomplete.hidden = YES;
+}
+- (IBAction)hideDrinksAutocomplete:(id)sender {
+    self.autocompleteDrinksTableView.hidden = YES;
+    self.btnCloseDrinksAutocomplete.hidden = YES;
 }
 @end

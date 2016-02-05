@@ -238,6 +238,12 @@
                                     <action selector="btnAddPlayerAndDrink:" destination="oFV-Ky-IpB" eventType="touchUpInside" id="LaY-PH-Bxs"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-9B-05m">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSw-vq-Dkx">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.058920069419999999" green="0.53783821779999996" blue="0.2532492596" alpha="1" colorSpace="calibratedRGB"/>
@@ -262,10 +268,6 @@
                                     <segue destination="6GL-IC-POj" kind="show" id="lEI-md-BRf"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-PC-xKA">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrz-aB-AhI">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -279,12 +281,30 @@
                                     <action selector="hideAutocomplete:" destination="oFV-Ky-IpB" eventType="touchUpInside" id="waB-ij-kxQ"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gTh-9B-05m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vck-3T-PfB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="47" y="274" width="320" height="139"/>
+                                </variation>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czF-Tg-qOl">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="325" y="236" width="42" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="hideDrinksAutocomplete:" destination="oFV-Ky-IpB" eventType="touchUpInside" id="Zxt-fh-ATH"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9sA-PC-xKA">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -295,8 +315,12 @@
                             <constraint firstItem="a9c-xE-QZB" firstAttribute="leading" secondItem="PBV-xA-yWQ" secondAttribute="leading" id="9CP-J7-F2r"/>
                             <constraint firstItem="gTh-9B-05m" firstAttribute="leading" secondItem="XSw-vq-Dkx" secondAttribute="leading" id="CMf-Gx-RAB"/>
                             <constraint firstItem="B3K-3E-HL4" firstAttribute="top" secondItem="98T-i5-Poq" secondAttribute="bottom" constant="107" id="Dic-y0-XQL"/>
-                            <constraint firstItem="gTh-9B-05m" firstAttribute="top" secondItem="9sA-PC-xKA" secondAttribute="bottom" constant="8" symbolic="YES" id="HWU-0j-gJ5"/>
-                            <constraint firstItem="n6n-Q3-Kkk" firstAttribute="top" secondItem="XSw-vq-Dkx" secondAttribute="bottom" constant="65" id="KWI-wm-ZmD"/>
+                            <constraint firstItem="gTh-9B-05m" firstAttribute="top" secondItem="9sA-PC-xKA" secondAttribute="bottom" constant="8" symbolic="YES" id="HWU-0j-gJ5">
+                                <variation key="heightClass=regular" constant="83"/>
+                            </constraint>
+                            <constraint firstItem="n6n-Q3-Kkk" firstAttribute="top" secondItem="XSw-vq-Dkx" secondAttribute="bottom" constant="65" id="KWI-wm-ZmD">
+                                <variation key="heightClass=regular" constant="20"/>
+                            </constraint>
                             <constraint firstItem="9sA-PC-xKA" firstAttribute="top" secondItem="B3K-3E-HL4" secondAttribute="bottom" id="QDD-Do-Aoi"/>
                             <constraint firstItem="gTh-9B-05m" firstAttribute="trailing" secondItem="PBV-xA-yWQ" secondAttribute="trailing" id="TZR-IV-Hh4"/>
                             <constraint firstItem="XSw-vq-Dkx" firstAttribute="centerX" secondItem="cLD-OS-uTW" secondAttribute="centerX" id="fDH-Z9-9dG"/>
@@ -305,7 +329,9 @@
                             <constraint firstItem="9sA-PC-xKA" firstAttribute="trailing" secondItem="PBV-xA-yWQ" secondAttribute="trailing" id="jf6-O8-tqE"/>
                             <constraint firstItem="a9c-xE-QZB" firstAttribute="trailing" secondItem="PBV-xA-yWQ" secondAttribute="trailing" id="jpw-JT-20I"/>
                             <constraint firstItem="B3K-3E-HL4" firstAttribute="trailing" secondItem="a9c-xE-QZB" secondAttribute="trailing" id="mwg-K4-OpS"/>
-                            <constraint firstItem="gTh-9B-05m" firstAttribute="top" secondItem="PBV-xA-yWQ" secondAttribute="bottom" constant="38" id="q9M-ok-5VO"/>
+                            <constraint firstItem="gTh-9B-05m" firstAttribute="top" secondItem="PBV-xA-yWQ" secondAttribute="bottom" constant="38" id="q9M-ok-5VO">
+                                <variation key="heightClass=regular" constant="83"/>
+                            </constraint>
                             <constraint firstItem="a9c-xE-QZB" firstAttribute="leading" secondItem="B3K-3E-HL4" secondAttribute="leading" id="rc5-rj-xPm"/>
                             <constraint firstItem="XSw-vq-Dkx" firstAttribute="top" secondItem="gTh-9B-05m" secondAttribute="bottom" constant="33" id="sLX-s5-aKt"/>
                             <constraint firstItem="9sA-PC-xKA" firstAttribute="leading" secondItem="a9c-xE-QZB" secondAttribute="leading" id="wJL-DQ-6J8"/>
@@ -315,10 +341,12 @@
                                 <exclude reference="B3K-3E-HL4"/>
                                 <exclude reference="a9c-xE-QZB"/>
                                 <exclude reference="PBV-xA-yWQ"/>
-                                <exclude reference="XSw-vq-Dkx"/>
-                                <exclude reference="9sA-PC-xKA"/>
-                                <exclude reference="mrz-aB-AhI"/>
                                 <exclude reference="gTh-9B-05m"/>
+                                <exclude reference="XSw-vq-Dkx"/>
+                                <exclude reference="mrz-aB-AhI"/>
+                                <exclude reference="Vck-3T-PfB"/>
+                                <exclude reference="czF-Tg-qOl"/>
+                                <exclude reference="9sA-PC-xKA"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="Dic-y0-XQL"/>
@@ -348,10 +376,12 @@
                                 <include reference="B3K-3E-HL4"/>
                                 <include reference="a9c-xE-QZB"/>
                                 <include reference="PBV-xA-yWQ"/>
-                                <include reference="XSw-vq-Dkx"/>
-                                <include reference="9sA-PC-xKA"/>
-                                <include reference="mrz-aB-AhI"/>
                                 <include reference="gTh-9B-05m"/>
+                                <include reference="XSw-vq-Dkx"/>
+                                <include reference="mrz-aB-AhI"/>
+                                <include reference="Vck-3T-PfB"/>
+                                <include reference="czF-Tg-qOl"/>
+                                <include reference="9sA-PC-xKA"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="Dic-y0-XQL"/>
@@ -379,8 +409,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
+                        <outlet property="autocompleteDrinksTableView" destination="Vck-3T-PfB" id="t10-7A-lXt"/>
                         <outlet property="autocompleteTableView" destination="9sA-PC-xKA" id="h5Q-1d-h4s"/>
                         <outlet property="btnCloseAutocomplete" destination="mrz-aB-AhI" id="Px7-B3-rMe"/>
+                        <outlet property="btnCloseDrinksAutocomplete" destination="czF-Tg-qOl" id="faq-d0-Cwx"/>
                         <outlet property="textFieldDrink" destination="a9c-xE-QZB" id="n8i-FI-6lo"/>
                         <outlet property="textFieldPlayerName" destination="B3K-3E-HL4" id="Y67-e6-UUI"/>
                         <outlet property="textViewPlayerDrinkList" destination="gTh-9B-05m" id="pPC-Ye-M6k"/>
