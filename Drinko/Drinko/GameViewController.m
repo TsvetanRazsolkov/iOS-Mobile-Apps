@@ -219,7 +219,7 @@
             NSString *message = [NSString stringWithFormat:@"Good job, %@!", [self.game.players[self.currentPlayerIndex] name]];
             NSString *buttonText;
             if (self.currentPlayerIndex != 5) {
-                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex] name] ];
+                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
             }
             else{
                 buttonText = @"That's all folks...";
@@ -230,7 +230,7 @@
         else{
             NSString *buttonText;
             if (self.currentPlayerIndex != 5) {
-                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex] name] ];
+                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
             }
             else{
                 buttonText = @"That's all folks...";
@@ -286,6 +286,7 @@
 -(void) endGame{
     // Do some game ending here - take photo, play a sound, go to controller that allows you to take picture or just go to main without a picture. There you will save the gama and persist it to core data;
     EndGameViewController* endGamePage = [self.storyboard instantiateViewControllerWithIdentifier:@"endGamePage"];
+    endGamePage.game = self.game;
     [self.navigationController pushViewController:endGamePage animated:YES];
 }
 

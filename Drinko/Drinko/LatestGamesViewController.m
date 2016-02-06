@@ -66,7 +66,6 @@ NSArray* arr;
             
         }
     }
-    NSLog([NSString stringWithFormat:@"%@", bla]);
 }
 
 - (void)didReceiveMemoryWarning {
