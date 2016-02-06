@@ -11,8 +11,6 @@
 
 @interface StartGameViewController : UIViewController<UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 
-@property NSMutableArray* players;
-@property NSMutableArray* drinks;
 @property GameModel* game;
 
 @end

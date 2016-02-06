@@ -27,6 +27,7 @@
     [super viewDidLoad];
     self.title = @"Main Page";
     
+    
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"mainPageBackground.png"] drawInRect:self.view.bounds];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();

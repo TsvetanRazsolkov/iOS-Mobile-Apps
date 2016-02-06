@@ -11,7 +11,7 @@
         <!--Main Page View Controller-->
         <scene sceneID="w50-5C-vKI">
             <objects>
-                <viewController id="o8H-Vf-AHb" customClass="MainPageViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="o8H-Vf-AHb" customClass="MainPageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cHK-hW-Ieh"/>
                         <viewControllerLayoutGuide type="bottom" id="3de-N0-p7A"/>
@@ -54,7 +54,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="oFV-Ky-IpB" kind="show" identifier="playWithTwoSegue" id="V3i-b6-bTz"/>
+                                    <segue destination="BMa-4h-dus" kind="show" id="OHr-9o-Mvh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kqW-yK-oIQ">
@@ -349,26 +349,26 @@
                                 <exclude reference="9sA-PC-xKA"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="KWI-wm-ZmD"/>
                                 <exclude reference="Dic-y0-XQL"/>
                                 <exclude reference="fli-N4-fjR"/>
                                 <exclude reference="mwg-K4-OpS"/>
-                                <exclude reference="QDD-Do-Aoi"/>
-                                <exclude reference="jf6-O8-tqE"/>
-                                <exclude reference="wJL-DQ-6J8"/>
                                 <exclude reference="97I-57-nIW"/>
                                 <exclude reference="9CP-J7-F2r"/>
                                 <exclude reference="jpw-JT-20I"/>
                                 <exclude reference="rc5-rj-xPm"/>
                                 <exclude reference="2Bc-lj-tXf"/>
+                                <exclude reference="fDH-Z9-9dG"/>
+                                <exclude reference="hb9-wr-fUB"/>
+                                <exclude reference="sLX-s5-aKt"/>
+                                <exclude reference="QDD-Do-Aoi"/>
+                                <exclude reference="jf6-O8-tqE"/>
+                                <exclude reference="wJL-DQ-6J8"/>
                                 <exclude reference="4yT-qz-bCV"/>
                                 <exclude reference="CMf-Gx-RAB"/>
                                 <exclude reference="HWU-0j-gJ5"/>
                                 <exclude reference="TZR-IV-Hh4"/>
                                 <exclude reference="q9M-ok-5VO"/>
-                                <exclude reference="fDH-Z9-9dG"/>
-                                <exclude reference="hb9-wr-fUB"/>
-                                <exclude reference="sLX-s5-aKt"/>
-                                <exclude reference="KWI-wm-ZmD"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -384,26 +384,26 @@
                                 <include reference="9sA-PC-xKA"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="KWI-wm-ZmD"/>
                                 <include reference="Dic-y0-XQL"/>
                                 <include reference="fli-N4-fjR"/>
                                 <include reference="mwg-K4-OpS"/>
-                                <include reference="QDD-Do-Aoi"/>
-                                <include reference="jf6-O8-tqE"/>
-                                <include reference="wJL-DQ-6J8"/>
                                 <include reference="97I-57-nIW"/>
                                 <include reference="9CP-J7-F2r"/>
                                 <include reference="jpw-JT-20I"/>
                                 <include reference="rc5-rj-xPm"/>
                                 <include reference="2Bc-lj-tXf"/>
+                                <include reference="fDH-Z9-9dG"/>
+                                <include reference="hb9-wr-fUB"/>
+                                <include reference="sLX-s5-aKt"/>
+                                <include reference="QDD-Do-Aoi"/>
+                                <include reference="jf6-O8-tqE"/>
+                                <include reference="wJL-DQ-6J8"/>
                                 <include reference="4yT-qz-bCV"/>
                                 <include reference="CMf-Gx-RAB"/>
                                 <include reference="HWU-0j-gJ5"/>
                                 <include reference="TZR-IV-Hh4"/>
                                 <include reference="q9M-ok-5VO"/>
-                                <include reference="fDH-Z9-9dG"/>
-                                <include reference="hb9-wr-fUB"/>
-                                <include reference="sLX-s5-aKt"/>
-                                <include reference="KWI-wm-ZmD"/>
                             </mask>
                         </variation>
                     </view>
@@ -522,7 +522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaR-kv-cja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1780"/>
+            <point key="canvasLocation" x="932" y="1760.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RGX-d4-Y4M">
@@ -541,6 +541,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fli-Sh-Z0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="162" y="224"/>
+        </scene>
+        <!--End Game View Controller-->
+        <scene sceneID="dEE-cP-TH3">
+            <objects>
+                <viewController storyboardIdentifier="endGamePage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BMa-4h-dus" customClass="EndGameViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e2F-Gp-Fjd"/>
+                        <viewControllerLayoutGuide type="bottom" id="j1r-o1-JCw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uPQ-Ct-inU">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P6p-km-aYo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P6p-km-aYo" firstAttribute="top" secondItem="e2F-Gp-Fjd" secondAttribute="bottom" constant="8" symbolic="YES" id="Mg0-BK-CFc"/>
+                            <constraint firstItem="P6p-km-aYo" firstAttribute="leading" secondItem="uPQ-Ct-inU" secondAttribute="leadingMargin" id="Xq0-Wc-eQR"/>
+                            <constraint firstItem="P6p-km-aYo" firstAttribute="trailing" secondItem="uPQ-Ct-inU" secondAttribute="trailingMargin" id="sOw-8P-0js"/>
+                            <constraint firstItem="j1r-o1-JCw" firstAttribute="top" secondItem="P6p-km-aYo" secondAttribute="bottom" constant="284" id="y7u-dG-PWQ"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="P6p-km-aYo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mg0-BK-CFc"/>
+                                <exclude reference="Xq0-Wc-eQR"/>
+                                <exclude reference="sOw-8P-0js"/>
+                                <exclude reference="y7u-dG-PWQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="subviews">
+                                <include reference="P6p-km-aYo"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Mg0-BK-CFc"/>
+                                <include reference="Xq0-Wc-eQR"/>
+                                <include reference="sOw-8P-0js"/>
+                                <include reference="y7u-dG-PWQ"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="P6p-km-aYo" id="akK-xK-WyJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5n-HC-2zE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="70" y="1020"/>
         </scene>
         <!--Latest Games View Controller-->
         <scene sceneID="Adp-na-Aq6">
@@ -574,10 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C94-ZF-aff" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="924" y="1013"/>
+            <point key="canvasLocation" x="932" y="1011"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="V3i-b6-bTz"/>
-    </inferredMetricsTieBreakers>
 </document>

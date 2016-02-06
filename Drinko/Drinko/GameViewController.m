@@ -7,6 +7,7 @@
 //
 
 #import "GameViewController.h"
+#import "EndGameViewController.h"
 
 @interface GameViewController ()
 @property double latitude;
@@ -19,6 +20,8 @@
 @property UIView* playerChip;
 
 - (IBAction)tapGesture:(id)sender;
+
+@property int currentPlayerIndex;
 
 @end
 
@@ -38,6 +41,8 @@
     // this will be moved to a separate method once i get the hang of it
     self.obstacles = [[NSMutableArray alloc]init];
     [self drawScene];
+    
+    self.currentPlayerIndex = 0;
     // Do any additional setup after loading the view.
 }
 
@@ -130,9 +135,8 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations	{
     CLLocation* location = [locations lastObject];
-    self.latitude = location.coordinate.latitude;
-    self.longitude = location.coordinate.longitude;
-   //NSLog(@"location %@",location);
+    self.game.latitude = location.coordinate.latitude;
+    self.game.longitude = location.coordinate.longitude;
     
     [self.locationManager stopUpdatingLocation];
 }
@@ -198,16 +202,47 @@
         [self.playerChip removeFromSuperview];
         int x = [sender locationInView:self.view].x;
         int landingZone = x/ (floor(self.view.bounds.size.width) / 6);
+        
         // Zones 0-6 will be the players. If it lands in the zone of the current player(this will be an int variable that holds the current player index in an array of players that comes from the previous page) - an alert to the others to drink their beverages.
-        [self showAlertWithTitle:@"Player drinks his shot or Other players drink their shots" andMessage:@"Better luck next time :) or Good job!"];
         
-        NSLog(@"Landing zone number: %d", landingZone);
-        
+        // The alert will be made with a custom Swift popup view class.
+        if (landingZone == self.currentPlayerIndex) {
+            
+            NSMutableString * playersToDrink = [[NSMutableString alloc] init];
+            for (int i = 0; i < self.game.players.count; i ++) {
+                if (i != self.currentPlayerIndex) {
+                    [playersToDrink appendFormat:@"%@, ", [self.game.players[i] name]];
+                }
+            }
+            
+            NSString *title = [NSString stringWithFormat:@"%@ drink your shots", playersToDrink];
+            NSString *message = [NSString stringWithFormat:@"Good job, %@!", [self.game.players[self.currentPlayerIndex] name]];
+            NSString *buttonText;
+            if (self.currentPlayerIndex != 5) {
+                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex] name] ];
+            }
+            else{
+                buttonText = @"That's all folks...";
+            }
+            
+            [self showAlertWithTitle:title andMessage:message andButtonText:buttonText];
+        }
+        else{
+            NSString *buttonText;
+            if (self.currentPlayerIndex != 5) {
+                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex] name] ];
+            }
+            else{
+                buttonText = @"That's all folks...";
+            }
+
+            [self showAlertWithTitle:[NSString stringWithFormat:@"%@, drink your shot of %@!", [self.game.players[self.currentPlayerIndex] name], [self.game.drinks[self.currentPlayerIndex] name]] andMessage:@"Better luck next time :)" andButtonText:buttonText];
+        }
         
         self.isChipDropped = NO;
         
         // Increase current player index with 1. When it becomes 6 - game over conditions - save in database.
-        
+        self.currentPlayerIndex++;
     }
     // If we have dropped the chip and it becomes stuck - tap on it and it will start again from top
     else if(self.isChipDropped
@@ -248,17 +283,27 @@
     }
 }
 
--(void)showAlertWithTitle: (NSString *) title andMessage: (NSString *) message{
+-(void) endGame{
+    // Do some game ending here - take photo, play a sound, go to controller that allows you to take picture or just go to main without a picture. There you will save the gama and persist it to core data;
+    EndGameViewController* endGamePage = [self.storyboard instantiateViewControllerWithIdentifier:@"endGamePage"];
+    [self.navigationController pushViewController:endGamePage animated:YES];
+}
+
+-(void)showAlertWithTitle: (NSString *) title andMessage: (NSString *) message andButtonText: (NSString *) buttonText{
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle: title
                                   message: message
                                   preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"Next player(based on the index) turn!"
+                                actionWithTitle:buttonText
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action)
-                                {}];
+                                {
+                                    if(self.currentPlayerIndex >= 6){
+                                        [self endGame];
+                                    }
+                                }];
     
     [alert addAction:yesButton];
     [self presentViewController:alert animated:YES completion:nil];

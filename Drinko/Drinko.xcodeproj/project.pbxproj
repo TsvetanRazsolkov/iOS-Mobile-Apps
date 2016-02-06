@@ -35,6 +35,8 @@
 		1EA7542C1C5D6247004F0022 /* commonBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542B1C5D6247004F0022 /* commonBackground.png */; };
 		1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EA7542D1C5D625B004F0022 /* mainPageBackground.png */; };
 		1EA754321C5D65BA004F0022 /* LatestGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */; };
+		1ECCC9D31C66437B00968B4C /* DummyVCard.vcf in Resources */ = {isa = PBXBuildFile; fileRef = 1ECCC9D21C66437B00968B4C /* DummyVCard.vcf */; };
+		1ECCC9D61C66445C00968B4C /* EndGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECCC9D51C66445C00968B4C /* EndGameViewController.m */; };
 		1ECE61C81C64F546007F2414 /* DrinkModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECE61C71C64F546007F2414 /* DrinkModel.m */; };
 		1EDDD56A1C636280009BB266 /* TRCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5691C636280009BB266 /* TRCoreData.m */; };
 		1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD57B1C637ECD009BB266 /* Game+CoreDataProperties.m */; };
@@ -108,6 +110,9 @@
 		1EA7542D1C5D625B004F0022 /* mainPageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mainPageBackground.png; sourceTree = "<group>"; };
 		1EA7542F1C5D65BA004F0022 /* LatestGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatestGamesViewController.h; sourceTree = "<group>"; };
 		1EA754301C5D65BA004F0022 /* LatestGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatestGamesViewController.m; sourceTree = "<group>"; };
+		1ECCC9D21C66437B00968B4C /* DummyVCard.vcf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = DummyVCard.vcf; sourceTree = "<group>"; };
+		1ECCC9D41C66445C00968B4C /* EndGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndGameViewController.h; sourceTree = "<group>"; };
+		1ECCC9D51C66445C00968B4C /* EndGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndGameViewController.m; sourceTree = "<group>"; };
 		1ECE61C61C64F546007F2414 /* DrinkModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrinkModel.h; sourceTree = "<group>"; };
 		1ECE61C71C64F546007F2414 /* DrinkModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrinkModel.m; sourceTree = "<group>"; };
 		1EDDD5681C636280009BB266 /* TRCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TRCoreData.h; sourceTree = "<group>"; };
@@ -270,6 +275,8 @@
 				1E2659041C5E3654009D7CF4 /* DetailsViewController.m */,
 				1EA579D31C60018C00B999F6 /* GameViewController.h */,
 				1EA579D41C60018C00B999F6 /* GameViewController.m */,
+				1ECCC9D41C66445C00968B4C /* EndGameViewController.h */,
+				1ECCC9D51C66445C00968B4C /* EndGameViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -277,6 +284,7 @@
 		1EA7541B1C5D32D0004F0022 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				1ECCC9D21C66437B00968B4C /* DummyVCard.vcf */,
 				1EA7541C1C5D32D8004F0022 /* Images */,
 			);
 			name = Resources;
@@ -441,6 +449,7 @@
 				1E26597E1C5ECDF6009D7CF4 /* playerIcon1.png in Resources */,
 				1E2659721C5E5CEE009D7CF4 /* defaultGameInfoImage.png in Resources */,
 				1EA753EC1C5D30BF004F0022 /* Main.storyboard in Resources */,
+				1ECCC9D31C66437B00968B4C /* DummyVCard.vcf in Resources */,
 				1E2659811C5ECDF6009D7CF4 /* playerIcon4.png in Resources */,
 				1E26597F1C5ECDF6009D7CF4 /* playerIcon2.png in Resources */,
 				1E2659771C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib in Resources */,
@@ -486,6 +495,7 @@
 				1E26596B1C5E4AE5009D7CF4 /* GameInfoTableViewCell.m in Sources */,
 				1EDDD56A1C636280009BB266 /* TRCoreData.m in Sources */,
 				1EA753E31C5D30BF004F0022 /* main.m in Sources */,
+				1ECCC9D61C66445C00968B4C /* EndGameViewController.m in Sources */,
 				1E2659061C5E3654009D7CF4 /* DetailsViewController.m in Sources */,
 				1EDDD58B1C637F11009BB266 /* Player.m in Sources */,
 				1EDDD57E1C637ECD009BB266 /* Game+CoreDataProperties.m in Sources */,
@@ -567,6 +577,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -586,7 +597,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_MODULE_NAME = Drinko;
+				PRODUCT_NAME = Drinko;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -611,6 +625,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -623,7 +638,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Drinko;
+				PRODUCT_NAME = Drinko;
 				SDKROOT = iphoneos;
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

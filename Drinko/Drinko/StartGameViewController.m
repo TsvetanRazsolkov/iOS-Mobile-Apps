@@ -25,8 +25,8 @@
 - (IBAction)hideDrinksAutocomplete:(id)sender;
 
 @property (strong, nonatomic) NSMutableArray* autocompletePlayerNames;
-@property (strong, nonatomic) NSMutableArray* allPlayerNames;
-@property (strong, nonatomic) NSMutableArray* allDrinks;
+@property (strong, nonatomic) NSMutableSet* allPlayerNames;
+@property (strong, nonatomic) NSMutableSet* allDrinks;
 @property (strong, nonatomic) NSMutableArray* autocompletelDrinkNames;
 @property (weak, nonatomic) IBOutlet UITableView *autocompleteTableView;
 @property (weak, nonatomic) IBOutlet UITableView *autocompleteDrinksTableView;
@@ -41,10 +41,10 @@
     [super viewDidLoad];
     self.title = @"Add Players and Drinks";
     
-    // will come from core data and phone contacts in a method loadPlayerNames
-    self.allPlayerNames = [[NSMutableArray alloc] init];
+    // will come from core data and phone contacts in a method loadAutocompleteData
+    self.allPlayerNames = [[NSMutableSet alloc] init];
     self.autocompletePlayerNames = [[NSMutableArray alloc] init];
-    self.allDrinks = [[NSMutableArray alloc] init];
+    self.allDrinks = [[NSMutableSet alloc] init];
     self.autocompletelDrinkNames = [[NSMutableArray alloc] init];
     
     [self loadAutocompleteData];
@@ -129,6 +129,7 @@
     [self.game.players addObject:player];
     [self.game.drinks addObject:drink];
     [self.allPlayerNames addObject:player.name];
+    [self.allDrinks addObject:drink.name];
     
     NSString* playerDrink = [NSString stringWithFormat:@"%@ - %@", player.name, drink.name ];
     
@@ -282,7 +283,7 @@
 
 - (void)searchAutocompleteDrinkEntriesWithSubstring:(NSString *)substring {
     
-    [self.autocompletePlayerNames removeAllObjects];
+    [self.autocompletelDrinkNames removeAllObjects];
     for(NSString *name in self.allDrinks) {
         NSRange substringRange = [name rangeOfString:substring options:NSCaseInsensitiveSearch];
         if (substringRange.location == 0) {
