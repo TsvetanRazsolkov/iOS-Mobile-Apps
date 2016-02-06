@@ -13,5 +13,10 @@
 @implementation Player
 
 // Insert code here to add functionality to your managed object subclass
+-(NSString *)description{
+    id bla = self.drinks;
+    NSString* desc = [NSString stringWithFormat:@"%@ drank %@", self.name, [[self.drinks allObjects] componentsJoinedByString:@","] ];
+    return desc;
+}
 
 @end

@@ -94,13 +94,13 @@
         Player* player = [NSEntityDescription insertNewObjectForEntityForName:@"Player" inManagedObjectContext:self.dataHelper.context];
         [player setValue:[self.game.players[i] name] forKey:(@"name")];
         
-        for (int j; j < [self.game.players[i] drinks].count; i++) {
+        for (int j = 0; j < [self.game.players[i] drinks].count; j++) {
             Drink* drink = [NSEntityDescription insertNewObjectForEntityForName:@"Drink" inManagedObjectContext:self.dataHelper.context];
-            [drink setValue:[self.game.drinks[i] name] forKey:(@"name")];
+            [drink setValue:[[self.game.players[i] drinks][j] name] forKey:(@"name")];
             
             [player addDrinksObject:drink];
         }
-        [game addPlayersObject:player];
+        [game addPlayersObject:player];        
     }
     
     [game setValue:[NSNumber numberWithDouble:self.game.latitude] forKey:(@"latitude")];

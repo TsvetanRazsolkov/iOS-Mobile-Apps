@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import "Game.h"
 
 @interface DetailsViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 
-@property float latitude;
-@property float longitude;
+@property (strong, nonatomic) Game *game;
 
 @property (weak, nonatomic) IBOutlet UICollectionView *playersCollectionView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

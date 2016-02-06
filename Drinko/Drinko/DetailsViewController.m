@@ -8,6 +8,7 @@
 
 #import "DetailsViewController.h"
 #import "PlayersCollectionViewCell.h"
+#import "Player.h"
 
 #define METERS_PER_MILE 1609.344
 
@@ -18,17 +19,20 @@
 
 @implementation DetailsViewController
 
-NSArray* playerNames;
+NSMutableArray* players;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Game Details Page";
     
+    players = [[NSMutableArray alloc]init];
+    for (Player* player in self.game.players) {
+        [players addObject:player];
+    }
+    
     self.playersCollectionView.dataSource = self;
     self.playersCollectionView.delegate = self;
     
-    playerNames = [NSArray arrayWithObjects:@"Pesho",@"Gosho",@"Stamat",@"Mariika", @"Doncho", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", nil];
-
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"commonBackground.png"] drawInRect:self.view.bounds];
@@ -45,8 +49,14 @@ NSArray* playerNames;
 - (void)viewWillAppear:(BOOL)animated {
     // 1
     CLLocationCoordinate2D zoomLocation;
-    zoomLocation.latitude = self.latitude;
-    zoomLocation.longitude= self.longitude;
+    if ([self.game.latitude doubleValue] == 0.0) {
+        zoomLocation.latitude = 42.650851;
+        zoomLocation.longitude = 23.377242;
+    }
+    else{
+    zoomLocation.latitude = [self.game.latitude doubleValue];
+    zoomLocation.longitude= [self.game.longitude doubleValue];
+    }
     
     // 2
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.1*METERS_PER_MILE, 0.1*METERS_PER_MILE);
@@ -69,7 +79,7 @@ NSArray* playerNames;
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
  // will return the number of cells in the array of player names we have for the specified game
-    return playerNames.count;
+    return players.count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -94,7 +104,7 @@ NSArray* playerNames;
     
     cell.imageView.image = [UIImage imageNamed:[playerIconsNames objectAtIndex:indexPath.row % 6]];
     
-    cell.playerNameLabel.text = [playerNames objectAtIndex:indexPath.row];
+    cell.playerNameLabel.text = [[players objectAtIndex:indexPath.row] name];
     cell.playerNameLabel.textColor = colours[indexPath.row % 6];
     cell.backgroundColor = [backgroundColours objectAtIndex:indexPath.row%6];
 //    cell.layer.cornerRadius = 20; // 37 for rounded corners;
@@ -117,9 +127,9 @@ NSArray* playerNames;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PlayersCollectionViewCell *cell = (PlayersCollectionViewCell*)[collectionView cellForItemAtIndexPath:indexPath];
+    Player *player = [players objectAtIndex:indexPath.row];
     
-    [self showAlertWithTitle:[NSString stringWithFormat:@"%@ drank:", cell.playerNameLabel.text] andMessage:@"Here we will format some drinks that will come somehow from the Game object"];
+    [self showAlertWithTitle:[NSString stringWithFormat:@"%@", [player description]] andMessage:@"It was difficult."];
 }
 
 -(void)showAlertWithTitle: (NSString *) title andMessage: (NSString *) message{

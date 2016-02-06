@@ -33,7 +33,7 @@ NSArray* arr;
     
     [self loadData];
     
-    arr = [NSArray arrayWithObjects:@"Pesho",@"Gosho",@"Stamat",@"Mariika", @"Doncho", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", nil];
+//    arr = [NSArray arrayWithObjects:@"Pesho",@"Gosho",@"Stamat",@"Mariika", @"Doncho", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", @"Andy", @"Pandy", nil];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"mainPageBackground.png"] drawInRect:self.view.bounds];
@@ -53,19 +53,9 @@ NSArray* arr;
     [request setSortDescriptors:[NSArray arrayWithObject:sort]];
     [request setFetchLimit:10];
     
-    NSArray* bla = [self.dataHelper.context executeFetchRequest:request error:nil];
+    arr = [self.dataHelper.context executeFetchRequest:request error:nil];
     
-    NSLog(@"poshka");
-
-    for (Game *ga in bla) {
-        for (Player *playe in [ga players]) {
-            for (Drink *dr in [playe drinks]) {
-                NSLog(@"%@ drank: %@", playe.name, dr.name);
-                
-            }
-            
-        }
-    }
+    NSLog(@"poshka");  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,9 +97,18 @@ NSArray* arr;
         
     }
     
-    cell.gameInfoImageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+    if ([[arr objectAtIndex:indexPath.row] image] == nil) {
+        cell.gameInfoImageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+    }
+    else{
+        // TODO: make UIImage from NSData
+        cell.gameInfoImageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+    }
     
-    cell.gameInfoPlayersLabel.text = [arr objectAtIndex:indexPath.row];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *datePlayed = [dateFormatter stringFromDate:[[arr objectAtIndex:indexPath.row] playedOn]];
+    cell.gameInfoPlayersLabel.text = datePlayed;
     cell.gameInfoPlayersLabel.textColor = colours[indexPath.row % 6];
     cell.backgroundColor = [backgroundColours objectAtIndex:indexPath.row%6];
     cell.layer.cornerRadius = 20; // 37 for rounded corners;
@@ -128,8 +127,7 @@ NSArray* arr;
     //         AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     //    appDelegate.window.rootViewController = detailsVC;
     
-    detailsVC.latitude = 42.6508509;
-    detailsVC.longitude = 23.3772423;
+    detailsVC.game = [arr objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:detailsVC animated:YES];
 }
 
