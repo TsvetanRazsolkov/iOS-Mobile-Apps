@@ -10,9 +10,11 @@
 #import "TRCoreData.h"
 #import "GameModel.h"
 
-@interface EndGameViewController : UIViewController
+@interface EndGameViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property GameModel* game;
+@property (strong, nonatomic) TRCoreData *dataHelper;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+- (IBAction)takePhoto:(id)sender;
 
 @end
