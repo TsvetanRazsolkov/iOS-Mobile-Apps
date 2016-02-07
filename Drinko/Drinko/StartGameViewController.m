@@ -13,6 +13,12 @@
 #import "TRCoreData.h"
 #import "Drink.h"
 #import "Player.h"
+//#import "APContact.h"
+//#import "APAddressBook.h"
+#import <AddressBook/AddressBook.h>
+#import <Contacts/Contacts.h>
+
+@import AddressBook;
 
 @interface StartGameViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *textFieldPlayerName;
@@ -80,6 +86,26 @@
 }
 
 -(void) loadAutocompleteData{
+    // names from Contacts API
+    if ([CNContactStore class]) {
+        //ios9 or later
+        CNEntityType entityType = CNEntityTypeContacts;
+        if( [CNContactStore authorizationStatusForEntityType:entityType] == CNAuthorizationStatusNotDetermined)
+        {
+            CNContactStore * contactStore = [[CNContactStore alloc] init];
+            [contactStore requestAccessForEntityType:entityType completionHandler:^(BOOL granted, NSError * _Nullable error) {
+                if(granted){
+                    [self getAllContact];
+                }
+            }];
+        }
+        else if( [CNContactStore authorizationStatusForEntityType:entityType]== CNAuthorizationStatusAuthorized)
+        {
+            [self getAllContact];
+        }
+    }
+    
+    // names from Core Data
     self.dataHelper = [[TRCoreData alloc] init];
     [self.dataHelper setupCoreData];
     
@@ -96,6 +122,28 @@
     for (int i = 0; i < drinksArr.count; i++) {
         [self.allDrinks addObject:[drinksArr[i] name]];
     }
+}
+
+-(void)getAllContact
+{
+    if([CNContactStore class])
+    {
+        //iOS 9 or later
+        NSError* contactError;
+        CNContactStore* addressBook = [[CNContactStore alloc]init];
+        [addressBook containersMatchingPredicate:[CNContainer predicateForContainersWithIdentifiers: @[addressBook.defaultContainerIdentifier]] error:&contactError];
+        NSArray * keysToFetch =@[CNContactEmailAddressesKey, CNContactPhoneNumbersKey, CNContactFamilyNameKey, CNContactGivenNameKey, CNContactPostalAddressesKey];
+        CNContactFetchRequest * request = [[CNContactFetchRequest alloc]initWithKeysToFetch:keysToFetch];
+        BOOL success = [addressBook enumerateContactsWithFetchRequest:request error:&contactError usingBlock:^(CNContact * __nonnull contact, BOOL * __nonnull stop){
+            [self parseContactNameFromContact:contact];
+        }];
+    }
+}
+
+- (void)parseContactNameFromContact :(CNContact* )contact
+{
+    NSString * firstName =  contact.givenName;
+    [self.allPlayerNames addObject:firstName];
 }
 
 - (IBAction)btnAddPlayerAndDrink:(id)sender {
