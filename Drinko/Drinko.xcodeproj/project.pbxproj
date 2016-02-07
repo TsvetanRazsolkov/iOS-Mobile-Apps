@@ -52,6 +52,7 @@
 		1EDDD5961C63F492009BB266 /* gamePageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDD5951C63F492009BB266 /* gamePageBackground.png */; };
 		1EE5860D1C6771D5002C0B08 /* CustomPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5860B1C6771D5002C0B08 /* CustomPopUpView.swift */; };
 		1EE5860E1C6771D5002C0B08 /* CustomPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5860C1C6771D5002C0B08 /* CustomPopUpView.xib */; };
+		1EE586111C67D054002C0B08 /* donkeybeer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1EE586101C67D054002C0B08 /* donkeybeer.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		1EE5860B1C6771D5002C0B08 /* CustomPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUpView.swift; sourceTree = "<group>"; };
 		1EE5860C1C6771D5002C0B08 /* CustomPopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUpView.xib; sourceTree = "<group>"; };
 		1EE5860F1C677726002C0B08 /* Drinko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drinko-Bridging-Header.h"; sourceTree = "<group>"; };
+		1EE586101C67D054002C0B08 /* donkeybeer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donkeybeer.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -307,6 +309,7 @@
 		1EA7541C1C5D32D8004F0022 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1EE586101C67D054002C0B08 /* donkeybeer.jpg */,
 				1EDDD5951C63F492009BB266 /* gamePageBackground.png */,
 				1E2659711C5E5CEE009D7CF4 /* defaultGameInfoImage.png */,
 				1EA7542D1C5D625B004F0022 /* mainPageBackground.png */,
@@ -479,6 +482,7 @@
 				1EA7542E1C5D625B004F0022 /* mainPageBackground.png in Resources */,
 				1E2659801C5ECDF6009D7CF4 /* playerIcon3.png in Resources */,
 				1E2659821C5ECDF6009D7CF4 /* playerIcon5.png in Resources */,
+				1EE586111C67D054002C0B08 /* donkeybeer.jpg in Resources */,
 				1EDDD5961C63F492009BB266 /* gamePageBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

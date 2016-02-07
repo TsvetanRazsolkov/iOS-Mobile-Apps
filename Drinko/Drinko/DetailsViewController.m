@@ -9,11 +9,15 @@
 #import "DetailsViewController.h"
 #import "PlayersCollectionViewCell.h"
 #import "Player.h"
+#import "Drinko-Swift.h"
 
 #define METERS_PER_MILE 1609.344
 
 
 @interface DetailsViewController ()
+
+@property (strong, nonatomic) CustomPopUpView* popUpView;
+@property (weak, nonatomic) IBOutlet UIImageView *zoomImageView;
 
 @end
 
@@ -47,13 +51,25 @@ NSMutableArray* players;
         self.imageView.image = [UIImage imageWithData:self.game.image];
     }
     
+    UILongPressGestureRecognizer* gesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(handleLongPressOnImage:)];
+    [self.imageView addGestureRecognizer:gesture];
+    
     UINib *nib = [UINib nibWithNibName:@"PlayersCollectionViewCell" bundle: nil];
     [self.playersCollectionView registerNib:nib forCellWithReuseIdentifier:@"playerCustomCell"];
-
+    
+    self.popUpView = [[CustomPopUpView alloc] initWithNibName:@"CustomPopUpView" bundle:nil];
+    
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
+    self.playersCollectionView.hidden = NO;
+    self.mapView.hidden = NO;
+    self.imageView.hidden = NO;
+    
+    self.zoomImageView.hidden = YES;
+    
     // 1
     CLLocationCoordinate2D zoomLocation;
     if ([self.game.latitude doubleValue] == 0.0) {
@@ -83,6 +99,43 @@ NSMutableArray* players;
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark Image gestures
+-(IBAction)handleLongPressOnImage:(UILongPressGestureRecognizer*)recognizer{
+    
+    UIImageView* clickedImgView = (UIImageView*)recognizer.view;
+    
+    self.zoomImageView.image = clickedImgView.image;
+    
+    self.playersCollectionView.hidden = YES;
+    self.mapView.hidden = YES;
+    self.imageView.hidden = YES;
+    
+    self.zoomImageView.hidden = NO;
+    [self.view bringSubviewToFront:self.zoomImageView];
+}
+
+- (IBAction)pinchImage:(UIPinchGestureRecognizer*)recognizer {
+    
+    if([recognizer state] == UIGestureRecognizerStateEnded
+       || recognizer.state == UIGestureRecognizerStateChanged){
+        
+        CGFloat currentScale = self.zoomImageView.frame.size.width / self.zoomImageView.bounds.size.width;        CGFloat newScale = currentScale * recognizer.scale;
+        
+        if(newScale < 1.0f){
+            newScale = 1.0f;
+        }
+        
+        if (newScale > 5.0f){
+            newScale = 5.f;
+        }
+        
+        CGAffineTransform transform = CGAffineTransformMakeScale(newScale, newScale);
+        self.zoomImageView.transform = transform;
+        recognizer.scale = 1;
+    }    
+}
+
+# pragma mark Collection view setup
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
  // will return the number of cells in the array of player names we have for the specified game
@@ -91,7 +144,6 @@ NSMutableArray* players;
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // this cell may be custom - with a random image inside of a drunk face icon :)
     
     static NSString *customCellIdentifier = @"playerCustomCell";
     
@@ -119,40 +171,12 @@ NSMutableArray* players;
     cell.tag = indexPath.row;
     
     return cell;
-    
-//    UICollectionViewCell *cell = (UICollectionViewCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"playerCollectionCell" forIndexPath:indexPath];
-//    
-//    UIGraphicsBeginImageContext(cell.frame.size);
-//    [[UIImage imageNamed:@"defaultGameInfoImage.png"] drawInRect:cell.bounds];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    cell.backgroundColor = [UIColor colorWithPatternImage:image];
-//
-//    
-//    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     Player *player = [players objectAtIndex:indexPath.row];
-    
-    [self showAlertWithTitle:[NSString stringWithFormat:@"%@", [player description]] andMessage:@"It was difficult."];
-}
-
--(void)showAlertWithTitle: (NSString *) title andMessage: (NSString *) message{
-    UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle: title
-                                  message: message
-                                  preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"Nice!"
-                                style:UIAlertActionStyleDefault
-                                handler:^(UIAlertAction * action)
-                                {}];
-    
-    [alert addAction:yesButton];
-    [self presentViewController:alert animated:YES completion:nil];
+    [self.popUpView showInView:self.view withMessage:[NSString stringWithFormat:@"%@", [player description]] andButtonText:@"Nice!" animated:YES];
 }
 
 /*

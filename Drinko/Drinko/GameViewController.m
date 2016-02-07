@@ -10,8 +10,6 @@
 #import "EndGameViewController.h"
 #import <AVFoundation/AVAudioSession.h>
 #import <AVFoundation/AVAudioPlayer.h>
-//#import "Drinko-Bridging-Header.h"
-//#import "CustomPopUpView.swift"
 #import "Drinko-Swift.h"
 
 @interface GameViewController ()
@@ -253,7 +251,7 @@
                 else{
                     buttonText = @"That's all folks...";
                     [self showAlertWithTitle:[NSString stringWithFormat:@"%@, drink your shot of %@!", [self.game.players[self.currentPlayerIndex] name], [self.game.drinks[self.currentPlayerIndex] name]] andMessage:@"Better luck next time :)" andButtonText:buttonText];
-                }                
+                }
             }
             
             self.isChipDropped = NO;
