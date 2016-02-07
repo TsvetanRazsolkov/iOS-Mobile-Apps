@@ -8,6 +8,8 @@
 
 #import "GameViewController.h"
 #import "EndGameViewController.h"
+#import <AVFoundation/AVAudioSession.h>
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface GameViewController ()
 @property double latitude;
@@ -18,6 +20,7 @@
 @property NSMutableArray* obstacles;
 @property Boolean isChipDropped;
 @property UIView* playerChip;
+@property (strong, nonatomic) AVAudioPlayer* audioPlayer;
 
 - (IBAction)tapGesture:(id)sender;
 
@@ -31,6 +34,8 @@
     [super viewDidLoad];
     self.title = @"Play Page";
     [self getLocation];
+    
+    [self playMusic];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"gamePageBackground.png"] drawInRect:self.view.bounds];
@@ -286,6 +291,7 @@
 -(void) endGame{
     // Do some game ending here - take photo, play a sound, go to controller that allows you to take picture or just go to main without a picture. There you will save the gama and persist it to core data;
     EndGameViewController* endGamePage = [self.storyboard instantiateViewControllerWithIdentifier:@"endGamePage"];
+    [self stopMusic];
     endGamePage.game = self.game;
     [self.navigationController pushViewController:endGamePage animated:YES];
 }
@@ -308,6 +314,21 @@
     
     [alert addAction:yesButton];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+-(void) playMusic{
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Music-loop-120-bpm" ofType:@"mp3"]];
+    self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    //        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+    //        [[AVAudioSession sharedInstance] setActive: YES error: nil];
+    //        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    self.audioPlayer.numberOfLoops = -1; //Infinite
+    [self.audioPlayer play];
+}
+
+-(void) stopMusic{
+    [self.audioPlayer stop];
 }
 
 @end

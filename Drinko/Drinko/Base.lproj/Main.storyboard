@@ -460,7 +460,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gg5-KU-f1Q">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gg5-KU-f1Q">
                                 <rect key="frame" x="20" y="223" width="560" height="169"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="169" id="376-uJ-Ycs"/>
@@ -494,7 +494,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-Jv-sFA">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-Jv-sFA">
                                 <rect key="frame" x="20" y="35" width="560" height="180"/>
                                 <color key="backgroundColor" red="1" green="0.22154110328972076" blue="0.1746666254567093" alpha="0.0" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="bxR-cH-Ipz">
@@ -530,16 +530,16 @@
                                 <exclude reference="vfO-wW-tLk"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Rpg-E4-nAQ"/>
-                                <exclude reference="gAE-Ku-kQQ"/>
-                                <exclude reference="MV7-WR-wIh"/>
-                                <exclude reference="TRT-dD-6L1"/>
-                                <exclude reference="h0w-oM-Oiv"/>
                                 <exclude reference="1MV-0d-Faj"/>
                                 <exclude reference="2AY-ph-xsj"/>
                                 <exclude reference="6KR-X3-Nvm"/>
                                 <exclude reference="TVT-da-1d7"/>
                                 <exclude reference="azL-bK-Uyr"/>
+                                <exclude reference="Rpg-E4-nAQ"/>
+                                <exclude reference="gAE-Ku-kQQ"/>
+                                <exclude reference="MV7-WR-wIh"/>
+                                <exclude reference="TRT-dD-6L1"/>
+                                <exclude reference="h0w-oM-Oiv"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -547,6 +547,11 @@
                                 <include reference="vfO-wW-tLk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="1MV-0d-Faj"/>
+                                <include reference="2AY-ph-xsj"/>
+                                <include reference="6KR-X3-Nvm"/>
+                                <include reference="TVT-da-1d7"/>
+                                <include reference="azL-bK-Uyr"/>
                                 <exclude reference="O0v-q7-2pT"/>
                                 <include reference="Rpg-E4-nAQ"/>
                                 <exclude reference="Tww-BM-E9g"/>
@@ -558,11 +563,6 @@
                                 <include reference="TRT-dD-6L1"/>
                                 <include reference="h0w-oM-Oiv"/>
                                 <exclude reference="oKm-U1-CTG"/>
-                                <include reference="1MV-0d-Faj"/>
-                                <include reference="2AY-ph-xsj"/>
-                                <include reference="6KR-X3-Nvm"/>
-                                <include reference="TVT-da-1d7"/>
-                                <include reference="azL-bK-Uyr"/>
                             </mask>
                         </variation>
                     </view>

@@ -14,6 +14,7 @@
 #import "Drink.h"
 #import "Player.h"
 #import <Contacts/Contacts.h>
+#import "MainPageViewController.h"
 
 @import AddressBook;
 
@@ -216,7 +217,7 @@
     return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{    
     GameViewController* toVC = segue.destinationViewController;
     toVC.game = self.game;
 }
