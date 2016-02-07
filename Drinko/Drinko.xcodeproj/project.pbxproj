@@ -50,6 +50,8 @@
 		1EDDD58F1C63D180009BB266 /* GameModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD58E1C63D180009BB266 /* GameModel.m */; };
 		1EDDD5921C63D1D3009BB266 /* PlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EDDD5911C63D1D3009BB266 /* PlayerModel.m */; };
 		1EDDD5961C63F492009BB266 /* gamePageBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EDDD5951C63F492009BB266 /* gamePageBackground.png */; };
+		1EE5860D1C6771D5002C0B08 /* CustomPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE5860B1C6771D5002C0B08 /* CustomPopUpView.swift */; };
+		1EE5860E1C6771D5002C0B08 /* CustomPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1EE5860C1C6771D5002C0B08 /* CustomPopUpView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +140,9 @@
 		1EDDD5901C63D1D3009BB266 /* PlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerModel.h; sourceTree = "<group>"; };
 		1EDDD5911C63D1D3009BB266 /* PlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerModel.m; sourceTree = "<group>"; };
 		1EDDD5951C63F492009BB266 /* gamePageBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gamePageBackground.png; sourceTree = "<group>"; };
+		1EE5860B1C6771D5002C0B08 /* CustomPopUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopUpView.swift; sourceTree = "<group>"; };
+		1EE5860C1C6771D5002C0B08 /* CustomPopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomPopUpView.xib; sourceTree = "<group>"; };
+		1EE5860F1C677726002C0B08 /* Drinko-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Drinko-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +201,8 @@
 				1E2659731C5EC66A009D7CF4 /* PlayersCollectionViewCell.h */,
 				1E2659741C5EC66A009D7CF4 /* PlayersCollectionViewCell.m */,
 				1E2659751C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib */,
+				1EE5860B1C6771D5002C0B08 /* CustomPopUpView.swift */,
+				1EE5860C1C6771D5002C0B08 /* CustomPopUpView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -237,6 +244,7 @@
 				1EA753F21C5D30BF004F0022 /* LaunchScreen.storyboard */,
 				1EA753F51C5D30BF004F0022 /* Info.plist */,
 				1EA753E11C5D30BF004F0022 /* Supporting Files */,
+				1EE5860F1C677726002C0B08 /* Drinko-Bridging-Header.h */,
 			);
 			path = Drinko;
 			sourceTree = "<group>";
@@ -464,6 +472,7 @@
 				1ECCC9D31C66437B00968B4C /* DummyVCard.vcf in Resources */,
 				1E2659811C5ECDF6009D7CF4 /* playerIcon4.png in Resources */,
 				1E26597F1C5ECDF6009D7CF4 /* playerIcon2.png in Resources */,
+				1EE5860E1C6771D5002C0B08 /* CustomPopUpView.xib in Resources */,
 				1E2659771C5EC66A009D7CF4 /* PlayersCollectionViewCell.xib in Resources */,
 				1E2659831C5ECDF6009D7CF4 /* playerIcon6.png in Resources */,
 				1E5A09531C66D69100B48374 /* Music-loop-120-bpm.mp3 in Resources */,
@@ -577,6 +586,7 @@
 				1EDDD58F1C63D180009BB266 /* GameModel.m in Sources */,
 				1EA579D51C60018C00B999F6 /* GameViewController.m in Sources */,
 				1EA7541A1C5D314F004F0022 /* MainPageViewController.m in Sources */,
+				1EE5860D1C6771D5002C0B08 /* CustomPopUpView.swift in Sources */,
 				1ECE61C81C64F546007F2414 /* DrinkModel.m in Sources */,
 				1EA753E61C5D30BF004F0022 /* AppDelegate.m in Sources */,
 				1EA753EF1C5D30BF004F0022 /* Drinko.xcdatamodeld in Sources */,
@@ -692,6 +702,7 @@
 				PRODUCT_NAME = Drinko;
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -733,6 +744,7 @@
 				PRODUCT_NAME = Drinko;
 				SDKROOT = iphoneos;
 				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -749,6 +761,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -765,6 +778,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "TelerikAcademy-2015-2016.Drinko";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Drinko/Drinko-Bridging-Header.h";
 			};
 			name = Release;

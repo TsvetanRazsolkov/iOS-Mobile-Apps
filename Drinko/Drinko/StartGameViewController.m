@@ -217,7 +217,7 @@
     return YES;
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     GameViewController* toVC = segue.destinationViewController;
     toVC.game = self.game;
 }

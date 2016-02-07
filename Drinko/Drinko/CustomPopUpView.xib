@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomPopUpView" customModule="Drinko" customModuleProvider="target">
+            <connections>
+                <outlet property="btnClose" destination="3Iy-G6-drk" id="mwi-pw-zlx"/>
+                <outlet property="labelMessage" destination="6vN-PM-QJQ" id="3FL-Qb-tcI"/>
+                <outlet property="popUpView" destination="d8n-uP-014" id="caA-IL-Fld"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d8n-uP-014">
+                    <rect key="frame" x="21" y="86" width="372" height="489"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DRINKO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHw-mW-aIp">
+                            <rect key="frame" x="33" y="8" width="308" height="94"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="39"/>
+                            <color key="textColor" red="0.87843137250000003" green="0.0" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="bla bla" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vN-PM-QJQ">
+                            <rect key="frame" x="32" y="137" width="308" height="207"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textColor" red="0.43818650059999997" green="0.62415505069999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="30"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Iy-G6-drk">
+                            <rect key="frame" x="-21" y="-87" width="416" height="738"/>
+                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
+                            <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-230"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" red="0.87843137250000003" green="0.0" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="closePopUpView:" destination="-1" eventType="touchUpInside" id="0l5-19-5Xp"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="d8n-uP-014" secondAttribute="bottom" constant="161" id="2eN-QB-fQG"/>
+                <constraint firstItem="d8n-uP-014" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="qZs-ro-830"/>
+                <constraint firstItem="d8n-uP-014" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="rSJ-7p-sm4"/>
+                <constraint firstItem="d8n-uP-014" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="21" id="z0G-gS-N0k"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+            <point key="canvasLocation" x="331" y="212"/>
+        </view>
+    </objects>
+</document>

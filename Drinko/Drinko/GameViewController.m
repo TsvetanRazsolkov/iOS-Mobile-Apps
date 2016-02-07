@@ -10,6 +10,9 @@
 #import "EndGameViewController.h"
 #import <AVFoundation/AVAudioSession.h>
 #import <AVFoundation/AVAudioPlayer.h>
+//#import "Drinko-Bridging-Header.h"
+//#import "CustomPopUpView.swift"
+#import "Drinko-Swift.h"
 
 @interface GameViewController ()
 @property double latitude;
@@ -25,6 +28,7 @@
 - (IBAction)tapGesture:(id)sender;
 
 @property int currentPlayerIndex;
+@property (strong, nonatomic) CustomPopUpView* popUpView;
 
 @end
 
@@ -48,6 +52,9 @@
     [self drawScene];
     
     self.currentPlayerIndex = 0;
+    self.popUpView = [[CustomPopUpView alloc] initWithNibName:@"CustomPopUpView" bundle:nil];
+    NSString* btnText = [NSString stringWithFormat:@"%@, your turn!",[self.game.players[self.currentPlayerIndex] name]];
+    [self.popUpView showInView:self.view withMessage:@"Welcome!\n Tap on screen to start :) \n If you get stuck, tap on the disc." andButtonText:btnText animated:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -152,139 +159,146 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)tapGesture:(id)sender {
-    if (!self.isChipDropped) {
-        int x = [sender locationInView:self.view].x;
-        
-        self.playerChip = [[UIView alloc] initWithFrame:
-                              CGRectMake(x, 50, 33, 33)];
-        self.playerChip.layer.cornerRadius = self.playerChip.bounds.size.width/2;
-        self.playerChip.layer.masksToBounds = YES;
-        self.playerChip.backgroundColor = [UIColor whiteColor];
-        self.playerChip.layer.borderWidth = 1.5f;
-        self.playerChip.layer.borderColor = [UIColor blackColor].CGColor;
-        [self.view addSubview:self.playerChip];
-        
-        
-        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-        UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.playerChip]];
-        [_animator addBehavior:gravityBehavior];
-        
-        _collision = [[UICollisionBehavior alloc] initWithItems:@[self.playerChip]];
-        for (int i = 0; i < self.obstacles.count; i++) {
-            [_collision addItem:((UIView*)[self.obstacles objectAtIndex:i])];
+    if(![self.popUpView checkIfActive]){
+        if (!self.isChipDropped) {
+            int x = [sender locationInView:self.view].x;
+            
+            self.playerChip = [[UIView alloc] initWithFrame:
+                               CGRectMake(x, 50, 33, 33)];
+            self.playerChip.layer.cornerRadius = self.playerChip.bounds.size.width/2;
+            self.playerChip.layer.masksToBounds = YES;
+            self.playerChip.backgroundColor = [UIColor whiteColor];
+            self.playerChip.layer.borderWidth = 1.5f;
+            self.playerChip.layer.borderColor = [UIColor blackColor].CGColor;
+            [self.view addSubview:self.playerChip];
+            
+            
+            _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+            UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.playerChip]];
+            [_animator addBehavior:gravityBehavior];
+            
+            _collision = [[UICollisionBehavior alloc] initWithItems:@[self.playerChip]];
+            for (int i = 0; i < self.obstacles.count; i++) {
+                [_collision addItem:((UIView*)[self.obstacles objectAtIndex:i])];
+            }
+            
+            _collision.translatesReferenceBoundsIntoBoundary = YES;
+            [_animator addBehavior:_collision];
+            
+            UIDynamicItemBehavior *obstaclesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.obstacles];
+            obstaclesBehavior.allowsRotation = NO;
+            obstaclesBehavior.density = 100000.0;
+            [_animator addBehavior:obstaclesBehavior];
+            
+            self.isChipDropped = YES;
         }
         
-        _collision.translatesReferenceBoundsIntoBoundary = YES;
-        [_animator addBehavior:_collision];
-        
-        UIDynamicItemBehavior *obstaclesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.obstacles];
-        obstaclesBehavior.allowsRotation = NO;
-        obstaclesBehavior.density = 100000.0;
-        [_animator addBehavior:obstaclesBehavior];
-        
-        self.isChipDropped = YES;
-    }
-    
-    // If we have dropped the chip and it has landed on the bottom - player move ends.
-    else if(self.isChipDropped
-            && [sender locationInView:self.view].x >= self.playerChip.frame.origin.x
-            && [sender locationInView:self.view].x <= self.playerChip.frame.origin.x + self.playerChip.bounds.size.width
-            &&[sender locationInView:self.view].y >= self.playerChip.frame.origin.y
-            && [sender locationInView:self.view].y <= self.playerChip.frame.origin.y + self.playerChip.bounds.size.height
-            && [sender locationInView:self.view].y > self.view.bounds.size.height - self.playerChip.bounds.size.height - 20){
-        
-        // Check where the chip has landed and anounce that the player in turn or the others have to drink;
-        [self.playerChip removeFromSuperview];
-        int x = [sender locationInView:self.view].x;
-        int landingZone = x/ (floor(self.view.bounds.size.width) / 6);
-        
-        // Zones 0-6 will be the players. If it lands in the zone of the current player(this will be an int variable that holds the current player index in an array of players that comes from the previous page) - an alert to the others to drink their beverages.
-        
-        // The alert will be made with a custom Swift popup view class.
-        if (landingZone == self.currentPlayerIndex) {
+        // If we have dropped the chip and it has landed on the bottom - player move ends.
+        else if(self.isChipDropped
+                && [sender locationInView:self.view].x >= self.playerChip.frame.origin.x
+                && [sender locationInView:self.view].x <= self.playerChip.frame.origin.x + self.playerChip.bounds.size.width
+                &&[sender locationInView:self.view].y >= self.playerChip.frame.origin.y
+                && [sender locationInView:self.view].y <= self.playerChip.frame.origin.y + self.playerChip.bounds.size.height
+                && [sender locationInView:self.view].y > self.view.bounds.size.height - self.playerChip.bounds.size.height - 20){
             
-            NSMutableString * playersToDrink = [[NSMutableString alloc] init];
-            for (int i = 0; i < self.game.players.count; i ++) {
-                if (i != self.currentPlayerIndex) {
-                    [playersToDrink appendFormat:@"%@, ", [self.game.players[i] name]];
+            // Check where the chip has landed and anounce that the player in turn or the others have to drink;
+            [self.playerChip removeFromSuperview];
+            int x = [sender locationInView:self.view].x;
+            int landingZone = x/ (floor(self.view.bounds.size.width) / 6);
+            
+            // Zones 0-6 will be the players. If it lands in the zone of the current player(this will be an int variable that holds the current player index in an array of players that comes from the previous page) - an alert to the others to drink their beverages.
+            
+            // The alert will be made with a custom Swift popup view class.
+            if (landingZone == self.currentPlayerIndex) {
+                
+                NSMutableString * playersToDrink = [[NSMutableString alloc] init];
+                for (int i = 0; i < self.game.players.count; i ++) {
+                    if (i != self.currentPlayerIndex) {
+                        [playersToDrink appendFormat:@"%@, ", [self.game.players[i] name]];
+                    }
                 }
-            }
-            
-            NSString *title = [NSString stringWithFormat:@"%@ drink your shots", playersToDrink];
-            NSString *message = [NSString stringWithFormat:@"Good job, %@!", [self.game.players[self.currentPlayerIndex] name]];
-            NSString *buttonText;
-            if (self.currentPlayerIndex != 5) {
-                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
-            }
-            else{
-                buttonText = @"That's all folks...";
-            }
-            
-            [self showAlertWithTitle:title andMessage:message andButtonText:buttonText];
-        }
-        else{
-            NSString *buttonText;
-            if (self.currentPlayerIndex != 5) {
-                buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
+                
+                NSString *text = [NSString stringWithFormat:@"%@ drink your shots. \n Good job, %@", playersToDrink, [self.game.players[self.currentPlayerIndex] name]];
+                NSString *buttonText;
+                if (self.currentPlayerIndex != 5) {
+                    buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
+                    
+                    [self.popUpView showInView:self.view withMessage:text andButtonText:buttonText animated:YES];
+                }
+                else{
+                    NSString *title = [NSString stringWithFormat:@"%@ drink your shots", playersToDrink];
+                    NSString *message = [NSString stringWithFormat:@"Good job, %@!", [self.game.players[self.currentPlayerIndex] name]];
+                    buttonText = @"That's all folks...";
+                    [self showAlertWithTitle:title andMessage:message andButtonText:buttonText];
+                }
+                
             }
             else{
-                buttonText = @"That's all folks...";
+                NSString* text = [NSString stringWithFormat:@"%@, drink your shot of %@!", [self.game.players[self.currentPlayerIndex] name], [self.game.drinks[self.currentPlayerIndex] name]];
+                NSString *buttonText;
+                if (self.currentPlayerIndex != 5) {
+                    buttonText = [NSString stringWithFormat:@"%@, it's your turn.",[self.game.players[self.currentPlayerIndex + 1] name] ];
+                    [self.popUpView showInView:self.view withMessage:text andButtonText:buttonText animated:YES];
+                }
+                else{
+                    buttonText = @"That's all folks...";
+                    [self showAlertWithTitle:[NSString stringWithFormat:@"%@, drink your shot of %@!", [self.game.players[self.currentPlayerIndex] name], [self.game.drinks[self.currentPlayerIndex] name]] andMessage:@"Better luck next time :)" andButtonText:buttonText];
+                }                
             }
-
-            [self showAlertWithTitle:[NSString stringWithFormat:@"%@, drink your shot of %@!", [self.game.players[self.currentPlayerIndex] name], [self.game.drinks[self.currentPlayerIndex] name]] andMessage:@"Better luck next time :)" andButtonText:buttonText];
+            
+            self.isChipDropped = NO;
+            
+            // Increase current player index with 1. When it becomes 6 - game over conditions - save in database.
+            self.currentPlayerIndex++;
+            
         }
-        
-        self.isChipDropped = NO;
-        
-        // Increase current player index with 1. When it becomes 6 - game over conditions - save in database.
-        self.currentPlayerIndex++;
-    }
-    // If we have dropped the chip and it becomes stuck - tap on it and it will start again from top
-    else if(self.isChipDropped
-            && [sender locationInView:self.view].x >= self.playerChip.frame.origin.x
-            && [sender locationInView:self.view].x <= self.playerChip.frame.origin.x + self.playerChip.bounds.size.width
-            &&[sender locationInView:self.view].y >= self.playerChip.frame.origin.y
-            && [sender locationInView:self.view].y <= self.playerChip.frame.origin.y + self.playerChip.bounds.size.height){
-        int x = [sender locationInView:self.view].x;
-        
-        [self.playerChip removeFromSuperview];
-        
-        self.playerChip = [[UIView alloc] initWithFrame:
-                           CGRectMake(x, 50, 33, 33)];
-        self.playerChip.layer.cornerRadius = self.playerChip.bounds.size.width/2;
-        self.playerChip.layer.masksToBounds = YES;
-        self.playerChip.backgroundColor = [UIColor whiteColor];
-        self.playerChip.layer.borderWidth = 1.5f;
-        self.playerChip.layer.borderColor = [UIColor blackColor].CGColor;
-        [self.view addSubview:self.playerChip];
-        
-        
-        _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
-        UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.playerChip]];
-        [_animator addBehavior:gravityBehavior];
-        
-        _collision = [[UICollisionBehavior alloc] initWithItems:@[self.playerChip]];
-        for (int i = 0; i < self.obstacles.count; i++) {
-            [_collision addItem:((UIView*)[self.obstacles objectAtIndex:i])];
+        // If we have dropped the chip and it becomes stuck - tap on it and it will start again from top
+        else if(self.isChipDropped
+                && [sender locationInView:self.view].x >= self.playerChip.frame.origin.x
+                && [sender locationInView:self.view].x <= self.playerChip.frame.origin.x + self.playerChip.bounds.size.width
+                &&[sender locationInView:self.view].y >= self.playerChip.frame.origin.y
+                && [sender locationInView:self.view].y <= self.playerChip.frame.origin.y + self.playerChip.bounds.size.height){
+            int x = [sender locationInView:self.view].x;
+            
+            [self.playerChip removeFromSuperview];
+            
+            self.playerChip = [[UIView alloc] initWithFrame:
+                               CGRectMake(x, 50, 33, 33)];
+            self.playerChip.layer.cornerRadius = self.playerChip.bounds.size.width/2;
+            self.playerChip.layer.masksToBounds = YES;
+            self.playerChip.backgroundColor = [UIColor whiteColor];
+            self.playerChip.layer.borderWidth = 1.5f;
+            self.playerChip.layer.borderColor = [UIColor blackColor].CGColor;
+            [self.view addSubview:self.playerChip];
+            
+            
+            _animator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+            UIGravityBehavior *gravityBehavior = [[UIGravityBehavior alloc] initWithItems:@[self.playerChip]];
+            [_animator addBehavior:gravityBehavior];
+            
+            _collision = [[UICollisionBehavior alloc] initWithItems:@[self.playerChip]];
+            for (int i = 0; i < self.obstacles.count; i++) {
+                [_collision addItem:((UIView*)[self.obstacles objectAtIndex:i])];
+            }
+            
+            _collision.translatesReferenceBoundsIntoBoundary = YES;
+            [_animator addBehavior:_collision];
+            
+            UIDynamicItemBehavior *obstaclesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.obstacles];
+            obstaclesBehavior.allowsRotation = NO;
+            obstaclesBehavior.density = 100000.0;
+            [_animator addBehavior:obstaclesBehavior];
         }
-        
-        _collision.translatesReferenceBoundsIntoBoundary = YES;
-        [_animator addBehavior:_collision];
-        
-        UIDynamicItemBehavior *obstaclesBehavior = [[UIDynamicItemBehavior alloc] initWithItems:self.obstacles];
-        obstaclesBehavior.allowsRotation = NO;
-        obstaclesBehavior.density = 100000.0;
-        [_animator addBehavior:obstaclesBehavior];
     }
 }
 
@@ -301,7 +315,7 @@
                                   alertControllerWithTitle: title
                                   message: message
                                   preferredStyle:UIAlertControllerStyleAlert];
-    
+
     UIAlertAction* yesButton = [UIAlertAction
                                 actionWithTitle:buttonText
                                 style:UIAlertActionStyleDefault
@@ -311,7 +325,7 @@
                                         [self endGame];
                                     }
                                 }];
-    
+
     [alert addAction:yesButton];
     [self presentViewController:alert animated:YES completion:nil];
 }
