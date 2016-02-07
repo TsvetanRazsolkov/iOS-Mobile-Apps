@@ -100,6 +100,10 @@ NSMutableArray* players;
 }
 
 #pragma mark Image gestures
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
+}
+
 -(IBAction)handleLongPressOnImage:(UILongPressGestureRecognizer*)recognizer{
     
     UIImageView* clickedImgView = (UIImageView*)recognizer.view;
@@ -133,6 +137,15 @@ NSMutableArray* players;
         self.zoomImageView.transform = transform;
         recognizer.scale = 1;
     }    
+}
+
+- (IBAction)handlePan:(UIPanGestureRecognizer *)recognizer {
+    
+    CGPoint translation = [recognizer translationInView:self.view];
+    recognizer.view.center = CGPointMake(recognizer.view.center.x + translation.x,
+                                         recognizer.view.center.y + translation.y);
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
+    
 }
 
 # pragma mark Collection view setup

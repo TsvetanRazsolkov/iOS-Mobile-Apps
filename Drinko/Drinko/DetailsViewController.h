@@ -10,7 +10,7 @@
 #import <MapKit/MapKit.h>
 #import "Game.h"
 
-@interface DetailsViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DetailsViewController : UIViewController<UICollectionViewDataSource, UICollectionViewDelegate,UIGestureRecognizerDelegate>
 
 @property (strong, nonatomic) Game *game;
 
