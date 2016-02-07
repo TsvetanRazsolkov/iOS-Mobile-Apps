@@ -102,7 +102,9 @@ NSArray* arr;
     }
     else{
         // TODO: make UIImage from NSData
-        cell.gameInfoImageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+        NSData* data = [[arr objectAtIndex:indexPath.row] image];
+        UIImage* imageToUse = [UIImage imageWithData:data];
+        cell.gameInfoImageView.image = imageToUse;
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

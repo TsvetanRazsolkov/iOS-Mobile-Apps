@@ -13,9 +13,6 @@
 #import "TRCoreData.h"
 #import "Drink.h"
 #import "Player.h"
-//#import "APContact.h"
-//#import "APAddressBook.h"
-#import <AddressBook/AddressBook.h>
 #import <Contacts/Contacts.h>
 
 @import AddressBook;

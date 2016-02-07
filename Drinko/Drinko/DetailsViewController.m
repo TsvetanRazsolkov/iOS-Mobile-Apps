@@ -40,6 +40,13 @@ NSMutableArray* players;
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
     
+    if (self.game.image == nil) {
+        self.imageView.image = [UIImage imageNamed:@"defaultGameInfoImage"];
+    }
+    else{
+        self.imageView.image = [UIImage imageWithData:self.game.image];
+    }
+    
     UINib *nib = [UINib nibWithNibName:@"PlayersCollectionViewCell" bundle: nil];
     [self.playersCollectionView registerNib:nib forCellWithReuseIdentifier:@"playerCustomCell"];
 

@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *playersCollectionView;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (weak, nonatomic) IBOutlet UILabel *playedOnLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

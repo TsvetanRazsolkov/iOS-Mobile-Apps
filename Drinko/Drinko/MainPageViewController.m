@@ -12,6 +12,9 @@
 #import "Drink.h"
 #import "Game.h"
 #import "Player.h"
+//#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVAudioSession.h>
+#import <AVFoundation/AVAudioPlayer.h>
 
 @interface MainPageViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *btnPlayWithTwo;
@@ -19,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btnLatest;
 
 @property (strong, nonatomic) TRCoreData* dataHelper;
+
+@property (strong, nonatomic) AVAudioPlayer* audioPlayer;
 @end
 
 @implementation MainPageViewController
@@ -28,6 +33,13 @@
     [self.navigationItem setHidesBackButton:YES];
     self.title = @"Main Page";
     
+        NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Music-loop-120-bpm" ofType:@"mp3"]];
+        self.audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+//        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:nil];
+//        [[AVAudioSession sharedInstance] setActive: YES error: nil];
+//        [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+        self.audioPlayer.numberOfLoops = -1; //Infinite
+        [self.audioPlayer play];
     
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"mainPageBackground.png"] drawInRect:self.view.bounds];
