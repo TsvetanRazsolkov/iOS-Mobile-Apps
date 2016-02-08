@@ -106,8 +106,9 @@
     [game setValue:[NSNumber numberWithDouble:self.game.latitude] forKey:(@"latitude")];
     [game setValue:[NSNumber numberWithDouble:self.game.longitude] forKey:(@"longitude")];
     [game setValue:[NSDate date] forKey:@"playedOn"];
+    // Should be this, the row below is only for presentation purposes.
     //[game setValue:self.game.image forKey:@"image"];
-    [game setValue: UIImagePNGRepresentation([UIImage imageNamed:@"donkeybeer.jpg"]) forKey:@"image"];
+    [game setValue: UIImagePNGRepresentation([UIImage imageNamed:@"playerIcon6"]) forKey:@"image"];
     [game setValue:[NSNumber numberWithInt:self.game.type ] forKey:@"type"];
     
     [self.dataHelper.context insertObject:game];    
